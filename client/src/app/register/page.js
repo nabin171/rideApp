@@ -1,9 +1,11 @@
+'use client'
 import { useFormik } from "formik";
 import React from "react";
 import { Badge, Avatar, Image, Button, Input } from "@nextui-org/react";
 import { RadioGroup, Radio, Checkbox } from "@nextui-org/radio";
 import Link from "next/link";
 import * as Yup from "yup";
+import { Axios } from "axios";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -15,8 +17,10 @@ const Register = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
+      confirmpassword:"",
       email: "",
       username:"",
+      gender:"",
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
@@ -24,6 +28,13 @@ const Register = () => {
     },
   });
 
+  const registerUser = async (values) => {
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/register`,
+      values
+    );
+    if (data) alert("registered successfully");
+  };
   return (
     <form
       onSubmit={formik.handleSubmit}
@@ -106,10 +117,10 @@ const Register = () => {
           </RadioGroup>
 
           <div className="button ">
-            <Button className="w-80" color="primary">
-              <Link as={Button} href="/home">
+            <Button type="submit" className="w-80" color="primary">
+             
                 Sign Up
-              </Link>
+             
             </Button>
           </div>
           <p className="freetrial text-center text-black-100">

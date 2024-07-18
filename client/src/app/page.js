@@ -18,13 +18,23 @@ const page = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
+      usernname:"",
       email: "",
+      gender: "",
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
       console.log(values);
     },
   });
+
+  const registerUser = async (values) => {
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/register`,
+      values
+    );
+    if (data) alert("registered successfully");
+  };
 
   return (
     <form
