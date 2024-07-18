@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import { useFormik } from "formik";
 import React from "react";
 import { Badge, Avatar, Image, Button, Input } from "@nextui-org/react";
 import { RadioGroup, Radio, Checkbox } from "@nextui-org/radio";
 import Link from "next/link";
 import * as Yup from "yup";
-import { Axios } from "axios";
+import axios from "axios";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -17,14 +17,14 @@ const Register = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
-      confirmpassword:"",
+      confirmpassword: "",
       email: "",
-      username:"",
-      gender:"",
+      username: "",
+      gender: "",
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      console.log(values);
+      registerUser(values);
     },
   });
 
@@ -89,12 +89,12 @@ const Register = () => {
                 label="Password"
                 className="max-w-xs"
                 placeholder="Create your password"
-                id="createpassword"
-                name="createpassword"
+                id="password"
+                name="password"
                 onChange={formik.handleChange}
-                value={formik.values.createpassword}
+                value={formik.values.password}
               />
-              {formik.errors.createpassword}
+              {formik.errors.password}
             </div>
             <Input
               classNames="py-2"
@@ -118,9 +118,7 @@ const Register = () => {
 
           <div className="button ">
             <Button type="submit" className="w-80" color="primary">
-             
-                Sign Up
-             
+              Sign Up
             </Button>
           </div>
           <p className="freetrial text-center text-black-100">
