@@ -1,7 +1,15 @@
 "use client";
 import { useFormik } from "formik";
 import React from "react";
-import { Badge, Avatar, Image, Button, Input } from "@nextui-org/react";
+import {
+  Badge,
+  Avatar,
+  Image,
+  Button,
+  Input,
+  Select,
+  SelectItem,
+} from "@nextui-org/react";
 import { RadioGroup, Radio, Checkbox } from "@nextui-org/radio";
 import Link from "next/link";
 import * as Yup from "yup";
@@ -35,6 +43,7 @@ const Register = () => {
     );
     if (data) alert("registered successfully");
   };
+
   return (
     <form
       onSubmit={formik.handleSubmit}
@@ -110,11 +119,16 @@ const Register = () => {
             />
             {formik.errors.confirmpassword}
           </div>
-          <RadioGroup label="Select your gender" defaultValue="Male">
-            <Radio value="buenos-aires">Male</Radio>
-            <Radio value="sydney">Female</Radio>
-            <Radio value="san-francisco">Others</Radio>
-          </RadioGroup>
+
+          <Select
+            name="gender"
+            label="Gender"
+            onChange={(e) => formik.setFieldValue("gender", e.target.value)}
+          >
+            <SelectItem key="Male">Male</SelectItem>
+            <SelectItem key="Female">Female</SelectItem>
+            <SelectItem key="Others">Others</SelectItem>
+          </Select>
 
           <div className="button ">
             <Button type="submit" className="w-80" color="primary">

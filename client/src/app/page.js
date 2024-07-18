@@ -18,7 +18,8 @@ const page = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
-      usernname:"",
+      confirmpassword:"",
+      username:"",
       email: "",
       gender: "",
     },
