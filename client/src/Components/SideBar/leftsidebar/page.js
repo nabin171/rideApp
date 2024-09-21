@@ -8,7 +8,7 @@ import Link from "next/link";
 
 import React from "react";
 
-const SideBar = () => {
+const LeftSideBar = () => {
   return (
     <div className="flex ">
       <div class="flex  w-7">
@@ -86,4 +86,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default LeftSideBar;
