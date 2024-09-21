@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 const RightSideBar = () => {
   return (
-    <div className="flex flex-col gap-1 pl-2">
+    <div className="flex  flex-col gap-5 pl-2">
       <div className="flex gap-8 ">
         <div className="flex gap-2">
           <FaLocationDot size={20} />
@@ -22,7 +22,7 @@ const RightSideBar = () => {
           <p>160</p>
         </div>
       </div>
-      <div className="rightbar flex flex-col">
+      <div className="rightbar flex flex-col gap-5">
         <div className="flex gap-2">
           <div className="circle flex flex-col items-center justify-center">
             <div className="bg-blue-600 h-4 w-4 rounded-full flex items-center justify-center">
@@ -72,25 +72,25 @@ const RightSideBar = () => {
           <p className="font-bold "> Payment Method </p>
           <div className="flex">
             <img
-              src="/pic1.png"
+              src="/fone.png"
               width={60}
               height={20}
               className="rounded m-1"
             ></img>
             <img
-              src="/mastercard.svg"
+              src="/ime.jpg"
               width={60}
               height={10}
               className="rounded m-1"
             ></img>
             <img
-              src="/paypal.svg"
+              src="/khalti.jpg"
               width={60}
               height={30}
               className="rounded m-1"
             ></img>
             <img
-              src="/p4.png"
+              src="/esewa.png"
               width={60}
               height={30}
               className="rounded m-1"
@@ -99,7 +99,7 @@ const RightSideBar = () => {
         </div>
         <div className="">
           <p className="font-bold "> Select Car </p>
-          <div className="flex">
+          <div className="flex gap-4">
             <img
               src="/taxi2.jpeg"
               width={120}
@@ -109,7 +109,7 @@ const RightSideBar = () => {
             <img
               src="/taxi2.jpeg"
               width={120}
-              height={90}
+              height={100}
               className="rounded m-1"
             ></img>
           </div>

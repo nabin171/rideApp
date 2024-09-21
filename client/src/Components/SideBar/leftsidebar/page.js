@@ -66,7 +66,7 @@ const LeftSideBar = () => {
                   <p>Audience</p>
                 </div>
               </div>
-              <div className="flex flex-col pt-10 pl-5 items-center gap-5">
+              <div className="flex flex-col pt-5 pl-5 items-center gap-5">
                 <FaStar size={60} className="" color="gold" />
                 <p className="text-2xl">Go Premium Now!</p>
                 <p className=" ">
