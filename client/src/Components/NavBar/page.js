@@ -42,7 +42,7 @@ const CustomNavbar = () => {
   };
 
   return (
-    <NextUINavbar>
+    <NextUINavbar className="bg-black ">
       <NavbarBrand>
         <img
           src="/mylogo.png"
@@ -58,7 +58,7 @@ const CustomNavbar = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-50 text-base"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -79,76 +79,61 @@ const CustomNavbar = () => {
               description="ACME scales apps to meet user demand, automagically, based on load."
               startContent={icons.scale}
             >
-              Autoscaling
+             Drive
             </DropdownItem>
             <DropdownItem
               key="usage_metrics"
               description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
               startContent={icons.activity}
             >
-              Usage Metrics
+            Ride
             </DropdownItem>
             <DropdownItem
               key="production_ready"
               description="ACME runs on ACME, join us and others serving requests at web scale."
               startContent={icons.flash}
             >
-              Production Ready
+             Deliver
             </DropdownItem>
             <DropdownItem
               key="99_uptime"
               description="Applications stay on the grid with high availability and high uptime guarantees."
               startContent={icons.server}
             >
-              +99% Uptime
+              Eat
             </DropdownItem>
             <DropdownItem
               key="supreme_support"
               description="Overcome any challenge with a supporting team ready to respond."
               startContent={icons.user}
             >
-              +Supreme Support
+              Gift Cards
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem isActive>
+        <NavbarItem >
           <Link href="#" aria-current="page">
             Driver
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Rider
-          </Link>
-        </NavbarItem>
+       
       </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="primary" href="/login" variant="flat">
+          <Button as={Link} className="bg-gray-500" href="/login" variant="flat">
             Login
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="/register" variant="flat">
+          <Button as={Link} className="bg-gray-500" href="/register" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-        <Input
-          classNames={{
-            base: "max-w-full sm:max-w-[10rem] h-10",
-            mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper:
-              "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-          }}
-          placeholder="Type to search..."
-          size="sm"
-          type="search"
-        />
+      
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar
@@ -167,10 +152,9 @@ const CustomNavbar = () => {
               <p className="font-semibold">karki0008@gmail.com</p>
             </DropdownItem>
             <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="system">System</DropdownItem>
-            <DropdownItem key="configurations">Configurations</DropdownItem>
+            <DropdownItem key="team_settings">Wallet</DropdownItem>
+            <DropdownItem key="analytics">Promos</DropdownItem>
+            <DropdownItem key="system">Support</DropdownItem>
             <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
