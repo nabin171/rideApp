@@ -43,14 +43,16 @@ const CustomNavbar = () => {
 
   return (
     <NextUINavbar className="bg-black ">
-      <NavbarBrand>
-        <img
-          src="/mylogo.png"
-          width={100}
-          height={70}
-          className="rounded m-1"
-        ></img>
-      </NavbarBrand>
+      <Button className="bg-black" as={Link} href="/">
+        <NavbarBrand>
+          <img
+            src="/mylogo.png"
+            width={100}
+            height={70}
+            className="rounded m-1"
+          ></img>
+        </NavbarBrand>
+      </Button>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <Dropdown>
@@ -58,12 +60,12 @@ const CustomNavbar = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-50 text-base"
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-400 text-base"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
               >
-                Services
+                Our Services
               </Button>
             </DropdownTrigger>
           </NavbarItem>
@@ -79,21 +81,21 @@ const CustomNavbar = () => {
               description="ACME scales apps to meet user demand, automagically, based on load."
               startContent={icons.scale}
             >
-             Drive
+              Car
             </DropdownItem>
             <DropdownItem
               key="usage_metrics"
               description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
               startContent={icons.activity}
             >
-            Ride
+              Bike
             </DropdownItem>
             <DropdownItem
               key="production_ready"
               description="ACME runs on ACME, join us and others serving requests at web scale."
               startContent={icons.flash}
             >
-             Deliver
+              Scooter
             </DropdownItem>
             <DropdownItem
               key="99_uptime"
@@ -111,29 +113,42 @@ const CustomNavbar = () => {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem >
-          <Link href="#" aria-current="page">
+        <NavbarItem>
+          <Link href="#" aria-current="page" className="text-gray-400 ">
             Driver
           </Link>
         </NavbarItem>
-       
+        <NavbarItem>
+          <Link href="#" aria-current="page" className="text-gray-400">
+            Rider
+          </Link>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} className="bg-gray-500" href="/login" variant="flat">
+          <Button
+            as={Link}
+            className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/login"
+            variant="flat"
+          >
             Login
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} className="bg-gray-500" href="/register" variant="flat">
+          <Button
+            as={Link}
+            className="bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/register"
+            variant="flat"
+          >
             Sign Up
           </Button>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-      
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar

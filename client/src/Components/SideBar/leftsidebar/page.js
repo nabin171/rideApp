@@ -12,7 +12,7 @@ const LeftSideBar = () => {
   return (
     <div className="flex ">
       <div class="flex  w-7">
-        <aside class="w-0.5 text-white p-4">
+        <aside class="w-0.5 text-white p-2">
           <main class="flex-grow  bg-gray-100 text-black">
             <div className="sidebar   w-[16.5rem]">
               <div className="rider-types flex justify-evenly gap-4">

@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 const RightSideBar = () => {
   return (
-    <div className="flex  flex-col gap-5 pl-2">
+    <div className="flex  flex-col gap-5 p-2">
       <div className="flex gap-8 ">
         <div className="flex gap-2">
           <FaLocationDot size={20} />

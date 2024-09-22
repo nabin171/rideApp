@@ -58,7 +58,7 @@ const dashboard = () => {
           </main>
 
           <div className=" ">
-            <img src="/map.png" width={865} height={1100}></img>
+            <img src="/map.png" width={878} height={1100}></img>
           </div>
 
           <main
