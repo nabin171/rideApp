@@ -9,33 +9,36 @@ const homepage = () => {
       <div className="nav">
         <CustomNavbar></CustomNavbar>
       </div>
-      <div className="flex p-16">
+      <div className="flex pt-10">
         <div className="pic ">
-          <img src="/p2.png" width={700} height={1000}></img>
+          <img src="/p21.png" width={720} height={1000}></img>
         </div>
-        <div className="flex flex-col">
-          <p className="text-5xl pt-10 pl-36 font-sans font-medium">
-            Let's Ride
-          </p>
 
-          <div className="flex pl-36 pt-10 gap-4 ">
-            <Button
-              as={Link}
-              className="text-xl bg-black rounded-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to blue-500"
-              href="/register"
-              variant="flat"
-            >
-              Apply to drive
-            </Button>
+        <div className=" w-1/2 flex flex-col justify-center align-middle items-center ">
+          <p className="text-5xl font-sans font-medium">Let's Ride</p>
 
-            <Button
-              as={Link}
-              className="text-xl bg-black rounded-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to blue-500"
-              href="/register"
-              variant="flat"
-            >
-              Sign up to ride
-            </Button>
+          <div className="flex  gap-4 pt-10 ">
+            <div className="bg-gray-800 rounded-xl">
+              <Button
+                as={Link}
+                className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+                href="/register"
+                variant="flat"
+              >
+                Apply to drive
+              </Button>
+            </div>
+
+            <div className="bg-gray-800  rounded-xl">
+              <Button
+                as={Link}
+                className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1 "
+                href="/register"
+                variant="flat"
+              >
+                Sign up to drive
+              </Button>
+            </div>
           </div>
         </div>
       </div>
