@@ -28,7 +28,7 @@ const page = () => {
       onSubmit={formik.handleSubmit}
       className="container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg"
     >
-      <div className="bg-cyan-100 rounded-2xl">
+      <div className=" bg-gray-100 rounded-2xl">
         <div className="box flex flex-col  gap-5 p-4">
           <div className="flex justify-between">
             <img
@@ -37,6 +37,9 @@ const page = () => {
               height={30}
               className="rounded"
             ></img>
+            <h2 className=" pt-4 heading  text-right text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1">
+              Express Rides
+            </h2>
           </div>
 
           <p className="freetrial text-center text-black-100 ">
@@ -73,11 +76,17 @@ const page = () => {
           <p className="forgetPassword text-center text-black-100">
             Forgot Password?
           </p>
-          <div className="button ">
-            <Button type="submit" className="w-80" color="primary">
-              <Link as={Button} href="">
-                Login
-              </Link>
+
+          
+
+          <div className="bg-gray-800 rounded-xl flex justify-center">
+            <Button
+              as={Link}
+              className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+              href="/register"
+              variant="flat"
+            >
+             Login
             </Button>
           </div>
 
@@ -150,7 +159,7 @@ const page = () => {
           </button>
           <p className="freetrial text-center text-black-100">
             Don't have an account yet?{" "}
-            <span className="text-black-900">
+            <span className="text-blue-600 underline ">
               {" "}
               <Link as={Button} href="/register">
                 Sign Up

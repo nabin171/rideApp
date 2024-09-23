@@ -49,17 +49,17 @@ const Register = () => {
       onSubmit={formik.handleSubmit}
       className="container flex hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg"
     >
-      <div className="bg-cyan-100 rounded-2xl">
+      <div className="bg-gray-100 rounded-2xl">
         <div className="box flex flex-col  gap-5 p-4">
           <div className="flex justify-between">
             <img
-              src="/hustle.png"
+              src="/mylogo.png"
               width={90}
               height={30}
               className="rounded"
             ></img>
-            <h2 className="heading text-right text-4xl text-black-200 text-green-500 pt-4">
-              Hustle
+            <h2 className=" pt-4 heading  text-right text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1">
+              Express Rides
             </h2>
           </div>
 
@@ -130,14 +130,20 @@ const Register = () => {
             <SelectItem key="Others">Others</SelectItem>
           </Select>
 
-          <div className="button ">
-            <Button type="submit" className="w-80" color="primary">
+          <div className="bg-gray-800 rounded-xl flex justify-center">
+            <Button
+              as={Link}
+              className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+              href="/register"
+              variant="flat"
+            >
               Sign Up
             </Button>
           </div>
+
           <p className="freetrial text-center text-black-100">
             Already have an account yet?{" "}
-            <span className="text-black-900">
+            <span className=" text-blue-600 underline ">
               <Link href="/">Sign In</Link>
             </span>
           </p>
