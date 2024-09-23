@@ -13,6 +13,21 @@ import {
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
+import { IoMdSettings } from "react-icons/io";
+import { HiSupport } from "react-icons/hi";
+
+import { FaBoltLightning } from "react-icons/fa6";
+import { RiCalendarScheduleLine } from "react-icons/ri";
+import { MdPayment } from "react-icons/md";
+import { MdOutlineStarRate } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { FaCircleUser } from "react-icons/fa6";
+import { FaWallet } from "react-icons/fa";
+import { IoMdPricetags } from "react-icons/io";
+import { MdFeedback } from "react-icons/md";
+import { IoLogOut } from "react-icons/io5";
+
+
 
 import {
   Navbar as NextUINavbar,
@@ -33,13 +48,22 @@ import {
 const CustomNavbar = () => {
   const icons = {
     chevron: <FaChevronDown size={16} />,
-    scale: <FaBalanceScale className="text-warning" size={30} />,
-    lock: <FaLock className="text-success" size={30} />,
-    activity: <FaChartLine className="text-secondary" size={30} />,
-    flash: <FaBolt className="text-primary" size={30} />,
-    server: <FaServer className="text-success" size={30} />,
-    user: <FaUserTag className="text-danger" size={30} />,
+    scale: <FaBoltLightning className="text-warning" size={30} />,
+    lock: <RiCalendarScheduleLine className="text-success" size={30} />,
+    activity: <MdPayment className="text-secondary" size={30} />,
+    flash: <MdOutlineStarRate className="text-primary" size={30} />,
+    server: <FaHistory className="text-success" size={30} />,
+    user: <FaCircleUser className="text-danger" size={30} />,
   };
+const user = {
+  settings: <IoMdSettings size={16} />,
+  wallet: <FaWallet size={16} />,
+  promo: <IoMdPricetags size={16} />,
+  support: <HiSupport size={16} />,
+  help: <MdFeedback size={16} />,
+  logout: <IoLogOut size={16} />,
+};
+
 
   return (
     <NextUINavbar className="bg-black ">
@@ -77,39 +101,39 @@ const CustomNavbar = () => {
             }}
           >
             <DropdownItem
-              key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              key="On-Demand Rides:"
+              description="Users can request a ride immediately, and the app connects them with the nearest available driver."
               startContent={icons.scale}
             >
-              Car
+              On-Demand Rides
             </DropdownItem>
             <DropdownItem
-              key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-              startContent={icons.activity}
+              key="Ride Scheduling:"
+              description="Plan your rides in advance by scheduling them at a specific time and date."
+              startContent={icons.lock}
             >
-              Bike
+              Ride Scheduling
             </DropdownItem>
             <DropdownItem
               key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}
+              description="ExpressRides offers a variety of payment options, including credit cards, debit cards, and digital wallets."
+              startContent={icons.activity}
             >
-              Scooter
+              Payment Options
             </DropdownItem>
             <DropdownItem
               key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}
+              description="You can rate your drivers after each ride, helping to maintain quality standards."
+              startContent={icons.flash}
             >
-              Eat
+              Driver Ratings:
             </DropdownItem>
             <DropdownItem
               key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
-              startContent={icons.user}
+              description="Access your past ride history, including details like dates, times, fares, and driver information."
+              startContent={icons.server}
             >
-              Gift Cards
+              Ride History:
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -166,14 +190,55 @@ const CustomNavbar = () => {
               <p className="font-semibold">Signed in as</p>
               <p className="font-semibold">karki0008@gmail.com</p>
             </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Wallet</DropdownItem>
-            <DropdownItem key="analytics">Promos</DropdownItem>
-            <DropdownItem key="system">Support</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
+
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.settings}
+            >
+              My settings
+            </DropdownItem>
+
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.wallet}
+            >
+              Wallet
+            </DropdownItem>
+
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.promo}
+            >
+              Promocode
+            </DropdownItem>
+
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.support}
+            >
+              Support
+            </DropdownItem>
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.help}
+            >
+              Help and Feedback
+            </DropdownItem>
+
+            <DropdownItem
+              key="On-Demand Rides:"
+              description=""
+              startContent={user.logout}
+            >
               Log Out
             </DropdownItem>
+            
+          
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>

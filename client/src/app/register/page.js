@@ -14,6 +14,7 @@ import { RadioGroup, Radio, Checkbox } from "@nextui-org/radio";
 import Link from "next/link";
 import * as Yup from "yup";
 import axios from "axios";
+import CustomNavbar from "@/Components/NavBar/page";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -47,10 +48,14 @@ const Register = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="container flex hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg"
+      className=""
     >
-      <div className="bg-gray-100 rounded-2xl">
-        <div className="box flex flex-col  gap-5 p-4">
+      <div>
+        <CustomNavbar></CustomNavbar>
+      </div>
+
+      <div className="rounded-2xl container flex hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg ">
+        <div className="box flex flex-col  gap-5 p-4 bg-gray-100 ">
           <div className="flex justify-between">
             <img
               src="/mylogo.png"

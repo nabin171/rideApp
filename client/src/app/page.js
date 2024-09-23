@@ -8,6 +8,7 @@ import { BsCashCoin } from "react-icons/bs";
 import { RxLightningBolt } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa";
 import { Avatar } from "@nextui-org/react";
+import { IoMdSettings } from "react-icons/io";
 
 import { IoMdTime } from "react-icons/io";
 
@@ -147,8 +148,10 @@ const homepage = () => {
           <div className="flex flex-col items-center gap-5">
             <Avatar
               isBordered
-              src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+              src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
+              size="lg"
             />
+
             <p className="text-gray-500 text-center">
               “As a student, it’s hard to complete my <br></br>class work around
               a schedule. I started <br></br>driving more with ExpressRides and

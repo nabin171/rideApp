@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import { Badge, Avatar, Image, Button, Input, button } from "@nextui-org/react";
 import Link from "next/link";
 import * as Yup from "yup";
+import CustomNavbar from "@/Components/NavBar/page";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -24,12 +25,12 @@ const page = () => {
   });
 
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      className="container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg"
-    >
-      <div className=" bg-gray-100 rounded-2xl">
-        <div className="box flex flex-col  gap-5 p-4">
+    <form onSubmit={formik.handleSubmit} className="">
+      <div>
+        <CustomNavbar></CustomNavbar>
+      </div>
+      <div className=" rounded-2xl     container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg      ">
+        <div className="box flex flex-col  gap-5 p-4 bg-gray-200">
           <div className="flex justify-between">
             <img
               src="/mylogo.png"
@@ -77,8 +78,6 @@ const page = () => {
             Forgot Password?
           </p>
 
-          
-
           <div className="bg-gray-800 rounded-xl flex justify-center">
             <Button
               as={Link}
@@ -86,7 +85,7 @@ const page = () => {
               href="/register"
               variant="flat"
             >
-             Login
+              Login
             </Button>
           </div>
 
