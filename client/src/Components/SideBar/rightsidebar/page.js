@@ -54,11 +54,18 @@ const RightSideBar = () => {
                     Home
                   </Link>
                 </Button>
-                <Button className="bg-red-500 ">
-                  <Link as={Button} href="/">
+
+                <div className="bg-gray-800  rounded-xl">
+                  <Button
+                    as={Link}
+                    className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1 hover:bg-green-700"
+                    href="/register"
+                    variant="flat"
+                  >
                     Office
-                  </Link>
-                </Button>
+                  </Button>
+                </div>
+
                 <Button className="bg-slate-100">
                   <Link as={Button} href="/">
                     Others

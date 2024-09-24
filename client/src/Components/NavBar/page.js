@@ -84,7 +84,7 @@ const user = {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-400 text-base"
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-200 text-base   "
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -138,14 +138,36 @@ const user = {
           </DropdownMenu>
         </Dropdown>
         <NavbarItem>
-          <Link href="#" aria-current="page" className="text-gray-400 ">
+          <Button
+            as={Link}
+            className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/login"
+            variant="flat"
+          >
             Driver
-          </Link>
+          </Button>
         </NavbarItem>
+
         <NavbarItem>
-          <Link href="#" aria-current="page" className="text-gray-400">
+          <Button
+            as={Link}
+            className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/login"
+            variant="flat"
+          >
             Rider
-          </Link>
+          </Button>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Button
+            as={Link}
+            className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/#about"
+            variant="flat"
+          >
+            About Us
+          </Button>
         </NavbarItem>
       </NavbarContent>
 
@@ -237,8 +259,6 @@ const user = {
             >
               Log Out
             </DropdownItem>
-            
-          
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>

@@ -46,15 +46,12 @@ const Register = () => {
   };
 
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      className=""
-    >
+    <form onSubmit={formik.handleSubmit} className="">
       <div>
         <CustomNavbar></CustomNavbar>
       </div>
 
-      <div className="rounded-2xl container flex hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg ">
+      <div className="rounded-2xl container flex  hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg ">
         <div className="box flex flex-col  gap-5 p-4 bg-gray-100 ">
           <div className="flex justify-between">
             <img
@@ -139,7 +136,7 @@ const Register = () => {
             <Button
               as={Link}
               className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-              href="/register"
+              href="/login"
               variant="flat"
             >
               Sign Up
@@ -149,7 +146,7 @@ const Register = () => {
           <p className="freetrial text-center text-black-100">
             Already have an account yet?{" "}
             <span className=" text-blue-600 underline ">
-              <Link href="/">Sign In</Link>
+              <Link href="/login">Sign In</Link>
             </span>
           </p>
         </div>

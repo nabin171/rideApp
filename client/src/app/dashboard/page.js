@@ -57,7 +57,7 @@ const dashboard = () => {
             <LeftSideBar />
           </main>
 
-          <div className=" ">
+          <div className="">
             <img src="/map.png" width={878} height={1100}></img>
           </div>
 

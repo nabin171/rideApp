@@ -11,6 +11,7 @@ import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
 
 import { IoMdTime } from "react-icons/io";
+import AboutUs from '@/Components/AboutUs/page';
 
 const productlist = [
   { id: 1, productName: "hakins", price: 20 },
@@ -24,9 +25,9 @@ const homepage = () => {
       <div className="nav">
         <CustomNavbar></CustomNavbar>
       </div>
-      <div className="flex pt-10">
+      <div className="flex pt-10 pl-20 ">
         <div className="pic ">
-          <img src="/p21.png" width={720} height={1000}></img>
+          <img src="/p2.webp" width={720} height={1000}></img>
         </div>
 
         <div className=" w-1/2 flex flex-col justify-center align-middle items-center ">
@@ -57,7 +58,7 @@ const homepage = () => {
           </div>
         </div>
       </div>
-      <div className="flex pl-48 pt-28  ">
+      <div className="flex pl-20 pt-28  ">
         <div className="flex flex-col w-1/2 gap-4">
           <p className="font-semibold">DRIVE WITH EXPRESS RIDES</p>
           <p className="text-3xl font-bold">
@@ -120,74 +121,12 @@ const homepage = () => {
           </div>
         </div>
         <div>
-          <img src="/d1.png" width={720} height={600}></img>
+          <img src="/r41.png" width={720} height={600}></img>
         </div>
       </div>
-      <div className="pl-48 pt-16">
-        <div className="flex gap-24 items-center">
-          <div className="flex flex-col items-center gap-5">
-            <Avatar
-              isBordered
-              src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-            />
-            <p className="text-gray-400 text-center">
-              “My motto is very simple. It doesn't cost <br></br>you a penny to
-              be nice and kind, but it<br></br> will cost you everything if{" "}
-              you're not. <br></br>If I'm free and somebody needs my help,
-              <br></br> I'll be the first one to jump in, in a<br></br>{" "}
-              heartbeat.”
-            </p>
-            <div className="flex flex-col text-center">
-              <p className="text-gray-400 font-medium">- Taylor</p>
-              <p className="text-gray-400 italic">
-                Driving with ExpressRides since 2019
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center gap-5">
-            <Avatar
-              isBordered
-              src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-              size="lg"
-            />
-
-            <p className="text-gray-500 text-center">
-              “As a student, it’s hard to complete my <br></br>class work around
-              a schedule. I started <br></br>driving more with ExpressRides and
-              realized it<br></br> was the perfect opportunity to make <br></br>
-              money and work on my own time! <br></br>Driving with ExpressRides
-              gives me freedom in <br></br>my schedule to focus on school, which
-              <br></br> is my main priority."
-            </p>
-            <div className="flex flex-col text-center">
-              <p className="text-gray-400 font-medium">- Harry</p>
-              <p className="text-gray-400 italic">
-                Driving with ExpressRides since 2020
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center gap-5">
-            <Avatar
-              isBordered
-              src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-            />
-            <p className="text-gray-400 text-center">
-              “My motto is very simple. It doesn't cost <br></br>you a penny to
-              be nice and kind, but it<br></br> will cost you everything if{" "}
-              you're not. <br></br>If I'm free and somebody needs my help,
-              <br></br> I'll be the first one to jump in, in a<br></br>{" "}
-              heartbeat.”
-            </p>
-            <div className="flex flex-col text-center">
-              <p className="text-gray-400 font-medium">- Marry</p>
-              <p className="text-gray-400 italic">
-                Driving with ExpressRides since 2015
-              </p>
-            </div>
-          </div>
-        </div>
+     
+      <div id="about">
+        <AboutUs></AboutUs>
       </div>
     </div>
   );

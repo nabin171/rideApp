@@ -82,7 +82,7 @@ const page = () => {
             <Button
               as={Link}
               className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-              href="/register"
+              href="/dashboard"
               variant="flat"
             >
               Login
@@ -94,7 +94,7 @@ const page = () => {
             <span class="flex-shrink mx-4 text-gray-400">OR</span>
             <div class="flex-grow border-t border-gray-400"></div>
           </div>
-          <button className="bg white border py-1 w-full rounded-xl mt-1 flex justify-center ">
+          <button className="bg white border  w-full rounded-xl mt-1 flex justify-center ">
             <svg
               className="mr-3 text-sm"
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const page = () => {
             </svg>
             Sign Up with Google
           </button>
-          <button className="bg white border py-1 w-full rounded-xl mt-1 flex justify-center ">
+          <button className="bg white border  w-full rounded-xl  flex justify-center ">
             <svg
               className="mr-3 text-sm"
               xmlns="http://www.w3.org/2000/svg"

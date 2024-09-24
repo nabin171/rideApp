@@ -72,11 +72,19 @@ const LeftSideBar = () => {
                 <p className=" ">
                   Let's explore the full report of your Transport Service
                 </p>
-                <Button className="w-30 hover:bg-green-700" color="primary">
-                  <Link as={Button} href="/">
+
+                <div className="bg-gray-800  rounded-xl">
+                  <Button
+                    as={Link}
+                    className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1 hover:bg-green-700"
+                    href="/register"
+                    variant="flat"
+                  >
                     Upgrade Now
-                  </Link>
-                </Button>
+                  </Button>
+                </div>
+
+                
               </div>
             </div>
           </main>
