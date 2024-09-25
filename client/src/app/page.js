@@ -11,6 +11,7 @@ import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
 
 import { IoMdTime } from "react-icons/io";
+import Footer from '@/Components/Footer/page';
 
 
 const productlist = [
@@ -124,7 +125,9 @@ const homepage = () => {
           <img src="/r41.png" width={720} height={600}></img>
         </div>
       </div>
-     
+     <div className='footer pt-10'>
+    <Footer></Footer>
+     </div>
    
     </div>
   );

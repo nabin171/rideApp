@@ -1,5 +1,6 @@
 import CustomNavbar from "@/Components/NavBar/page";
-import { Avatar } from "@nextui-org/react";
+import { Avatar, Button } from "@nextui-org/react";
+import Link from "next/link";
 import React from "react";
 
 const aboutUs = () => {
@@ -8,17 +9,39 @@ const aboutUs = () => {
       <div>
         <CustomNavbar></CustomNavbar>
       </div>
-      <div className=" pt-28 pl-20 ">
-        <p className="text-3xl font-bold text-center">About Us</p>
-        <div className="text-center text-gray-500  pt-5">
-          Welcome to Express Rides, your go-to solution for fast, reliable, and
-          <br></br>
-          convenient transportation. Whether you’re commuting to work, heading
-          to
-          <br></br>
-          the airport, or exploring the city, we are committed to providing a
-          <br></br>
-          seamless ride experience tailored to your needs.
+
+      <div className=" pt-28 pl-20 flex justify-between">
+        <div className="flex flex-col gap-2">
+          <p className="text-4xl font-bold text-left">About Us</p>
+          <div className=" text-gray-500 text-left pt-5 pb-5">
+            Welcome to Express Rides, your go-to solution for fast, reliable,
+            and
+            <br></br>
+            convenient transportation. Whether you’re commuting to work, heading
+            to
+            <br></br>
+            the airport, or exploring the city, we are committed to providing a
+            <br></br>
+            seamless ride experience tailored to your needs.
+          </div>
+
+          
+          <div className="bg-gray-800 rounded-xl w-40  ">
+            <Button
+              as={Link}
+              className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+              href="/#"
+              variant="flat"
+            >
+              Learn More...
+            </Button>
+          </div>
+        </div>
+
+        <div>
+          <div className="pic ">
+            <img src="/r3.jpg" width={720} height={1000}></img>
+          </div>
         </div>
       </div>
 
