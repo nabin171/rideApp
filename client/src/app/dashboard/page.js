@@ -61,6 +61,7 @@ const dashboard = () => {
             <img src="/map.png" width={878} height={1100}></img>
           </div>
 
+  
           <main
             style={{ height: "577px" }}
             class="flex-grow gap-8 w-[17.5rem]  bg-gray-100 "

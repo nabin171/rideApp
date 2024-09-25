@@ -11,7 +11,7 @@ import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
 
 import { IoMdTime } from "react-icons/io";
-import AboutUs from '@/Components/AboutUs/page';
+
 
 const productlist = [
   { id: 1, productName: "hakins", price: 20 },
@@ -125,9 +125,7 @@ const homepage = () => {
         </div>
       </div>
      
-      <div id="about">
-        <AboutUs></AboutUs>
-      </div>
+   
     </div>
   );
 } 

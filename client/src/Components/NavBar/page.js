@@ -27,14 +27,7 @@ import { IoMdPricetags } from "react-icons/io";
 import { MdFeedback } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
 
-
-
-import {
-  Navbar as NextUINavbar,
- 
-  Button,
-  
-} from "@nextui-org/react";
+import { Navbar as NextUINavbar, Button } from "@nextui-org/react";
 import {
   FaChevronDown,
   FaLock,
@@ -55,15 +48,14 @@ const CustomNavbar = () => {
     server: <FaHistory className="text-success" size={30} />,
     user: <FaCircleUser className="text-danger" size={30} />,
   };
-const user = {
-  settings: <IoMdSettings size={16} />,
-  wallet: <FaWallet size={16} />,
-  promo: <IoMdPricetags size={16} />,
-  support: <HiSupport size={16} />,
-  help: <MdFeedback size={16} />,
-  logout: <IoLogOut size={16} />,
-};
-
+  const user = {
+    settings: <IoMdSettings size={16} />,
+    wallet: <FaWallet size={16} />,
+    promo: <IoMdPricetags size={16} />,
+    support: <HiSupport size={16} />,
+    help: <MdFeedback size={16} />,
+    logout: <IoLogOut size={16} />,
+  };
 
   return (
     <NextUINavbar className="bg-black ">
@@ -84,7 +76,7 @@ const user = {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-gray-200 text-base   "
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-pink-400 text-base   "
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -163,7 +155,7 @@ const user = {
           <Button
             as={Link}
             className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
-            href="/#about"
+            href="/AboutUs"
             variant="flat"
           >
             About Us

@@ -1,9 +1,13 @@
-import { Avatar } from '@nextui-org/react';
-import React from 'react'
+import CustomNavbar from "@/Components/NavBar/page";
+import { Avatar } from "@nextui-org/react";
+import React from "react";
 
-const AboutUs = () => {
+const aboutUs = () => {
   return (
     <div>
+      <div>
+        <CustomNavbar></CustomNavbar>
+      </div>
       <div className=" pt-28 pl-20 ">
         <p className="text-3xl font-bold text-center">About Us</p>
         <div className="text-center text-gray-500  pt-5">
@@ -86,6 +90,6 @@ const AboutUs = () => {
       </div>
     </div>
   );
-}
+};
 
-export default AboutUs
+export default aboutUs;
