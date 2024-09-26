@@ -164,7 +164,7 @@ const CustomNavbar = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem>
+        <NavbarItem className="bg-indigo-300 rounded-xl flex justify-center">
           <Button
             as={Link}
             className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
@@ -174,7 +174,8 @@ const CustomNavbar = () => {
             Login
           </Button>
         </NavbarItem>
-        <NavbarItem>
+
+        <NavbarItem className="bg-indigo-300 rounded-xl flex justify-center">
           <Button
             as={Link}
             className="bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"

@@ -1,62 +1,99 @@
+import { Button, Input } from "@nextui-org/react";
+import Link from "next/link";
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-
-
+import { MdEmail } from "react-icons/md";
+import { Divider } from "@nextui-org/react";
+import { FaCopyright } from "react-icons/fa";
+import { IoBarChartSharp } from "react-icons/io5";
 const Footer = () => {
   return (
-    <div className="bg-black w-full h-72  flex gap-40 pl-20 pt-10">
+    <div className="flex flex-col bg-black">
+      <div className=" w-full h-72 flex gap-40 pl-20 pt-10">
+        <div>
+          <img
+            src="/mylogo.png"
+            width={100}
+            height={70}
+            className="rounded m-1"
+          ></img>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="text-gray-200">Driver</div>
+          <div className="text-gray-400">
+            <p>Earnings</p>
+            <p>Cities</p>
+            <p>Safety</p>
+            <p>Bonus</p>
+            <p>Application Requirements</p>
+            <p>New Driver Guide</p>
+            <p>Express Rewards</p>
+            <p>Insurance</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="text-gray-200">Rider</div>
+          <div className="text-gray-400">
+            <p>Sign up to ride</p>
+            <p>Business Profile</p>
+            <p>Rewards</p>
+            <p>Events</p>
+            <p>Gift Cards</p>
+            <p>Donate</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
+            <div className="text-gray-200">Get in touch</div>
+            <div className="flex gap-2">
+              <p>
+                <FaFacebook className="text-white " size={20} />
+              </p>
+              <p>
+                <FaInstagramSquare className="text-white " size={20} />
+              </p>
+              <p>
+                <FaTwitter className="text-white " size={20} />
+              </p>
+              <p>
+                <FaLinkedin className="text-white " size={20} />
+              </p>
+            </div>
+          </div>
+          <div className="flex  flex-col gap-4">
+            <Input
+              type="email"
+              placeholder="Enter your email address "
+              className="max-w-xs w-60 "
+              id="email"
+              name="email"
+            />
+            <div className="bg-indigo-300 w-32 rounded-xl flex justify-center">
+              <Button
+                as={Link}
+                className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+                href="/login"
+                variant="flat"
+              >
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
-        <img
-          src="/mylogo.png"
-          width={100}
-          height={70}
-          className="rounded m-1"
-        ></img>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <div className="text-gray-200">Driver</div>
-        <div className="text-gray-400">
-          <p>Earnings</p>
-          <p>Cities</p>
-          <p>Safety</p>
-          <p>Bonus</p>
-          <p>Application Requirements</p>
-          <p>New Driver Guide</p>
-          <p>Express Rewards</p>
-          <p>Insurance</p>
+        <div class="">
+          <hr class="border-t-2 border-gray-700 w-full" />
         </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <div className="text-gray-200">Download</div>
-        <div className="text-gray-400">
-          <p>Windows app</p>
-          <p>Windows app</p>
-          <p>Windows app</p>
-          <p>Windows app</p>
+        <div className="flex gap-2 justify-center pt-2 pb-2">
+          <FaCopyright className="text-gray-400 " size={20} />
+          <p className="text-gray-400">Copyright,All rights reserved.</p>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-2">
-        <div className="text-gray-200">Get in touch</div>
-        <div className="flex gap-2">
-          <p>
-            <FaFacebook className="text-white " size={20} />
-          </p>
-          <p>
-            <FaInstagramSquare className="text-white " size={20} />
-          </p>
-          <p>
-            <FaTwitter className="text-white " size={20} />
-          </p>
-          <p>
-            <FaLinkedin className="text-white " size={20} />
-          </p>
-        </div>
+       
       </div>
     </div>
   );
