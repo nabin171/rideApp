@@ -15,6 +15,7 @@ import Link from "next/link";
 import * as Yup from "yup";
 import axios from "axios";
 import CustomNavbar from "@/Components/NavBar/page";
+import Footer from "@/Components/Footer/page";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -150,6 +151,9 @@ const Register = () => {
             </span>
           </p>
         </div>
+      </div>
+      <div>
+        <Footer></Footer>
       </div>
     </form>
   );

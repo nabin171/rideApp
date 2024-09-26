@@ -9,10 +9,12 @@ import { MdEmail } from "react-icons/md";
 import { Divider } from "@nextui-org/react";
 import { FaCopyright } from "react-icons/fa";
 import { IoBarChartSharp } from "react-icons/io5";
+import { MdLanguage } from "react-icons/md";
+
 const Footer = () => {
   return (
     <div className="flex flex-col bg-black">
-      <div className=" w-full h-72 flex gap-40 pl-20 pt-10">
+      <div className=" w-full h-72 flex gap-32 pl-20 pt-10">
         <div>
           <img
             src="/mylogo.png"
@@ -70,25 +72,31 @@ const Footer = () => {
               className="max-w-xs w-60 "
               id="email"
               name="email"
-              
-            
               startContent={
                 <div className="pointer-events-none flex items-center">
                   <MdEmail />
                 </div>
               }
             />
+
             <div className="bg-indigo-300 w-32 rounded-xl flex justify-center">
-              <Button
+              <button
                 as={Link}
                 className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
                 href="/login"
                 variant="flat"
               >
                 Subscribe
-              </Button>
+              </button>
             </div>
           </div>
+        </div>
+       
+        <div className="flex gap-2">
+          <p>
+            <MdLanguage size={20} className="text-white" />
+          </p>
+          <p className="text-white">EN</p>
         </div>
       </div>
       <div>

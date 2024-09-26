@@ -5,6 +5,7 @@ import { Badge, Avatar, Image, Button, Input, button } from "@nextui-org/react";
 import Link from "next/link";
 import * as Yup from "yup";
 import CustomNavbar from "@/Components/NavBar/page";
+import Footer from "@/Components/Footer/page";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -25,7 +26,10 @@ const page = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="">
+    <form
+      onSubmit={formik.handleSubmit}
+      className="flex flex-col  min-h-screen "
+    >
       <div>
         <CustomNavbar></CustomNavbar>
       </div>
@@ -166,6 +170,9 @@ const page = () => {
             </span>
           </p>
         </div>
+      </div>
+      <div>
+        <Footer></Footer>
       </div>
     </form>
   );

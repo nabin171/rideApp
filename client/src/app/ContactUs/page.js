@@ -47,16 +47,13 @@ const contactUs = () => {
               />
             </div>
 
-            <div>
-              <Input
-                type="Email"
-                placeholder="Message"
-                className="max-w-xs w-96 "
-                id="Email"
-                name="email"
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="Message"
+              className="text-black p-2 rounded-xl mb-4 h-40 w-full bg-gray-100"
+            ></input>
           </div>
+
           <div className="bg-gray-800 rounded-xl w-48 flex justify-center  ">
             <Button
               as={Link}

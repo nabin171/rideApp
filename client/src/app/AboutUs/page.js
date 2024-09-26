@@ -31,7 +31,7 @@ const aboutUs = () => {
             <Button
               as={Link}
               className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-              href="/#"
+              href="/#footer"
               variant="flat"
             >
               Learn More...
@@ -46,7 +46,7 @@ const aboutUs = () => {
         </div>
       </div>
 
-      <div className=" pt-28 pl-20">
+      <div className=" pt-28 pb-5 pl-20">
         <div className="flex  items-center justify-around">
           <div className="flex flex-col items-center gap-5">
             <Avatar
@@ -112,8 +112,8 @@ const aboutUs = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer></Footer>
+      <div id="footer">
+        <Footer ></Footer>
         
       </div>
     </div>
