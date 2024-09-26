@@ -70,6 +70,13 @@ const Footer = () => {
               className="max-w-xs w-60 "
               id="email"
               name="email"
+              
+            
+              startContent={
+                <div className="pointer-events-none flex items-center">
+                  <MdEmail />
+                </div>
+              }
             />
             <div className="bg-indigo-300 w-32 rounded-xl flex justify-center">
               <Button
@@ -92,8 +99,6 @@ const Footer = () => {
           <FaCopyright className="text-gray-400 " size={20} />
           <p className="text-gray-400">Copyright,All rights reserved.</p>
         </div>
-
-       
       </div>
     </div>
   );

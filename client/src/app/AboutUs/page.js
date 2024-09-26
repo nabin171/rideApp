@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer/page";
 import CustomNavbar from "@/Components/NavBar/page";
 import { Avatar, Button } from "@nextui-org/react";
 import Link from "next/link";
@@ -110,6 +111,10 @@ const aboutUs = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Footer></Footer>
+        
       </div>
     </div>
   );

@@ -161,6 +161,17 @@ const CustomNavbar = () => {
             About Us
           </Button>
         </NavbarItem>
+
+        <NavbarItem>
+          <Button
+            as={Link}
+            className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
+            href="/ContactUs"
+            variant="flat"
+          >
+            Contact Us
+          </Button>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">

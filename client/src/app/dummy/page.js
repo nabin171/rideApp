@@ -1,36 +1,30 @@
 import { Button } from '@nextui-org/react';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
+  import {Input} from "@nextui-org/react";
+
 
 const dummy = () => {
-  return (
-    <Button className="border-2 border-black  bg-white ">
-      <div className="bg-white text-black rounded-md p-2  ">
-        {" "}
-        <Link href="#">Learn More</Link>
-        <Button
-          disableRipple
-          className="p-0 bg-transparent data-[hover=true]:bg-transparent text-blue-200 text-base   "
-          endContent={icons.chevron}
-          radius="sm"
-          variant="light"
-        >
-          Our Services
-        </Button>
+    const sizes = ["sm", "md", "lg"];
+ return(
+ 
 
-        <Button
-          as={Link}
-          className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
-          href="/login"
-          variant="flat"
-        >
-          Rider
-        </Button>
-      </div>
-    </Button>
-    
+
+
+
+
+ 
+    <div className="w-full flex flex-col gap-4">
+      {sizes.map((size) => (
+        <div key={size} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+          <Input size={size} type="email" label="Email" />
+          <Input size={size} type="email" label="Email" placeholder="Enter your email" />
+        </div>
+      ))}  
+    </div>  
   );
 }
+
 
 export default dummy
 
