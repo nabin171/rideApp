@@ -9,9 +9,9 @@ import { MdEmail } from "react-icons/md";
 const contactUs = () => {
   return (
     <div>
-      <div>
+      
         <CustomNavbar></CustomNavbar>
-      </div>
+   
 
       <div className=" pt-28 pl-20 flex justify-between">
         <div className="flex flex-col gap-7">

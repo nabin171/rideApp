@@ -48,9 +48,9 @@ const Register = () => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="">
-      <div>
+      
         <CustomNavbar></CustomNavbar>
-      </div>
+     
 
       <div className="rounded-2xl container flex  hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg ">
         <div className="box flex flex-col  gap-5 p-4 bg-gray-100 ">

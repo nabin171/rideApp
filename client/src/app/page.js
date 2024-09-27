@@ -1,9 +1,9 @@
-import CustomNavbar from '@/Components/NavBar/page'
+import CustomNavbar from "@/Components/NavBar/page";
 import { IoBarChartSharp } from "react-icons/io5";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-import { Button } from '@nextui-org/react';
-import Link from 'next/link';
-import React from 'react';
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
+import React from "react";
 import { BsCashCoin } from "react-icons/bs";
 import { RxLightningBolt } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa";
@@ -11,8 +11,7 @@ import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
 
 import { IoMdTime } from "react-icons/io";
-import Footer from '@/Components/Footer/page';
-
+import Footer from "@/Components/Footer/page";
 
 const productlist = [
   { id: 1, productName: "hakins", price: 20 },
@@ -22,10 +21,10 @@ const productlist = [
 
 const homepage = () => {
   return (
-    <div>
-      <div className="nav">
+    <div className="relative ">
+     
         <CustomNavbar></CustomNavbar>
-      </div>
+     
       <div className="flex pt-10 pl-20 ">
         <div className="pic ">
           <img src="/p2.webp" width={720} height={1000}></img>
@@ -125,12 +124,11 @@ const homepage = () => {
           <img src="/r41.png" width={720} height={600}></img>
         </div>
       </div>
-     <div className='footer pt-10'>
-    <Footer></Footer>
-     </div>
-   
+      <div className="footer pt-10">
+        <Footer></Footer>
+      </div>
     </div>
   );
-} 
+};
 
-export default homepage
+export default homepage;
