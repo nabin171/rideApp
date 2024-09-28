@@ -2,7 +2,7 @@ import React from 'react'
 import {Calendar} from "@nextui-org/react";
 import {parseDate} from '@internationalized/date';
 
-const calender = () => {
+const Calender = () => {
   return (
     <div className="flex gap-x-4">
       <Calendar aria-label="Date (No Selection)" />
@@ -12,4 +12,4 @@ const calender = () => {
 }
     
  
-export default calender
+export default Calender

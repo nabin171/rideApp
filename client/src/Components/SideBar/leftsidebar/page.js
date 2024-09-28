@@ -5,7 +5,13 @@ import { IoPerson } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-
+  import {
+    CircularProgress,
+    Card,
+    CardBody,
+    CardFooter,
+    Chip,
+  } from "@nextui-org/react";
 import React from "react";
 
 const LeftSideBar = () => {
@@ -53,12 +59,40 @@ const LeftSideBar = () => {
                   <p>Prices</p>
                 </div>
 
-                <div className="flex gap-2">
-                  <p>
-                    <IoWalletSharp size={20} />
-                  </p>
-                  <p>Wallets</p>
-                </div>
+
+
+
+
+              
+
+
+    <Card className="w-[150px] h-[150px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
+      <CardBody className="justify-center items-center pb-0">
+        <CircularProgress
+          classNames={{
+            svg: "w-36 h-36 drop-shadow-md",
+            indicator: "stroke-white",
+            track: "stroke-white/10",
+            value: "text-3xl font-semibold text-white",
+          }}
+          value={70}
+          strokeWidth={4}
+          showValueLabel={true}
+        />
+      </CardBody>
+      <CardFooter className="justify-center items-center pt-0">
+        <Chip
+          classNames={{
+            base: "border-1 border-white/30",
+            content: "text-white/90 text-small font-semibold",
+          }}
+          variant="bordered"
+        >
+          2800 Data points
+        </Chip>
+      </CardFooter>
+    </Card>
+  
                 <div className="flex gap-2">
                   <p>
                     <IoPerson size={20} />
