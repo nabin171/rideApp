@@ -4,14 +4,13 @@ import { Avatar, Button, Input } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 import { FaCircleUser } from "react-icons/fa6";
+import {Textarea} from "@nextui-org/react";
 import { MdEmail } from "react-icons/md";
 
 const contactUs = () => {
   return (
     <div>
-      
-        <CustomNavbar></CustomNavbar>
-   
+      <CustomNavbar></CustomNavbar>
 
       <div className=" pt-28 pl-20 flex justify-between">
         <div className="flex flex-col gap-7">
@@ -46,12 +45,11 @@ const contactUs = () => {
                 }
               />
             </div>
-
-            <input
-              type="text"
-              placeholder="Message"
-              className="text-black p-2 rounded-xl mb-4 h-40 w-full bg-gray-100"
-            ></input>
+            <Textarea
+              label="Message"
+              placeholder="Enter your Message"
+              className="max-w-xs"
+            />
           </div>
 
           <div className="bg-gray-800 rounded-xl w-48 flex justify-center  ">
