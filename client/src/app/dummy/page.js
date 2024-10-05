@@ -1,32 +1,27 @@
-import { Button } from '@nextui-org/react';
-import Link from 'next/link';
-import React from 'react';
-  import {Input} from "@nextui-org/react";
+'use client'
+import { Button } from '@nextui-org/react'
+import React, { useState } from 'react'
 
+const page = () => {
+  let [number,setNumber]=useState('');
 
-const dummy = () => {
-    const sizes = ["sm", "md", "lg"];
- return(
- 
-
-
-
-
-
- 
-    <div className="w-full flex flex-col gap-4">
-      {sizes.map((size) => (
-        <div key={size} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
-          <Input size={size} type="email" label="Email" />
-          <Input size={size} type="email" label="Email" placeholder="Enter your email" />
-        </div>
-      ))}  
-    </div>  
+  return (
+    <div>
+      {number}
+      <br></br>
+      <Button onClick={() => setNumber(number + "0")}>0</Button>
+      <Button onClick={() => setNumber(number + "1")}>1</Button>
+      <Button onClick={() => setNumber(number + "2")}>2</Button>
+      <Button onClick={() => setNumber(number + "3")}>3</Button>
+      <Button onClick={() => setNumber(number + "4")}>4</Button>
+      <Button onClick={() => setNumber(number + "5")}>5</Button>
+      <Button onClick={() => setNumber(number + "6")}>6</Button>
+      <Button onClick={() => setNumber(number + "7")}>7</Button>
+      <Button onClick={() => setNumber(number + "+")}>+</Button>
+      <Button onClick={() => setNumber(number + "-")}>-</Button>
+      <Button onClick={() => setNumber(eval(number))}>=</Button>
+    </div>
   );
 }
 
-
-export default dummy
-
-
-           /* <input class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Type here...">*/
+export default page
