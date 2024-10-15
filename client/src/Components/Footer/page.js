@@ -1,3 +1,4 @@
+'use client'
 import { Button, Input } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
@@ -10,8 +11,10 @@ import { Divider } from "@nextui-org/react";
 import { FaCopyright } from "react-icons/fa";
 import { IoBarChartSharp } from "react-icons/io5";
 import { MdLanguage } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+    const router = useRouter()
   return (
     <div className="flex flex-col bg-black">
       <div className=" w-full h-72 flex gap-32 pl-20 pt-10">
@@ -52,16 +55,32 @@ const Footer = () => {
             <div className="text-gray-200">Get in touch</div>
             <div className="flex gap-2">
               <p>
-                <FaFacebook className="text-white " size={20} />
+                <FaFacebook
+                  className="text-white "
+                  onClick={() => router.push("https://www.facebook.com")}
+                  size={20}
+                />
               </p>
               <p>
-                <FaInstagramSquare className="text-white " size={20} />
+                <FaInstagramSquare
+                  className="text-white "
+                  onClick={() => router.push("https://www.instagram.com")}
+                  size={20}
+                />
               </p>
               <p>
-                <FaTwitter className="text-white " size={20} />
+                <FaTwitter
+                  className="text-white "
+                  size={20}
+                  onClick={() => router.push("https://www.twitter.com")}
+                />
               </p>
               <p>
-                <FaLinkedin className="text-white " size={20} />
+                <FaLinkedin
+                  className="text-white "
+                  onClick={() => router.push("https://www.linkedln.com")}
+                  size={20}
+                />
               </p>
             </div>
           </div>
@@ -91,7 +110,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-       
+
         <div className="flex gap-2">
           <p>
             <MdLanguage size={20} className="text-white" />

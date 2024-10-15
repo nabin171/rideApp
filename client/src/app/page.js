@@ -9,15 +9,8 @@ import { RxLightningBolt } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa";
 import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
-
 import { IoMdTime } from "react-icons/io";
 import Footer from "@/Components/Footer/page";
-
-const productlist = [
-  { id: 1, productName: "hakins", price: 20 },
-  { id: 2, productName: "hakiddns", price: 20 },
-  { id: 2, productName: "hakiddsddns", price: 10 },
-];
 
 const homepage = () => {
   return (

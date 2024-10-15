@@ -4,12 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="page.js"></script>
 </head>
 <body>
-    
-    <div id="maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13873.514494849178!2d85.33166298953859!3d27.693248501491695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1727191987498!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <div className="flex-col m-40 ml-80 border bg-black justify-center w-[30%]">
+      <p
+       className="text-xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
+
+      >
+        CALCULATOR
+      </p>
+
+      <Divider />
+      <div className="rounded-3xl text-white flex justify-item-right">
+        {number}
+      </div>
+      <Divider />
+      <div className="flex gap-4 m-2">
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber("")}
+        >
+          C
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number + "%")}
+        >
+          %
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number.slice(0, -1))}
+        >
+          ⌫
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number + "/")}
+        >
+          /
+        </Button>
+      </div>
+      <div className="flex gap-4 m-2">
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "7")}
+        >
+          7
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "8")}
+        >
+          8
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "9")}
+        >
+          9
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number + "")}
+        ></Button>
+      </div>
+      <div className="flex gap-4 m-2">
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "4")}
+        >
+          4
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "5")}
+        >
+          5
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "6")}
+        >
+          6
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number + "-")}
+        >
+          -
+        </Button>
+      </div>
+      <div className="flex gap-4 m-2">
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "1")}
+        >
+          1
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "2")}
+        >
+          2
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "3")}
+        >
+          3
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(number + "+")}
+        >
+          +
+        </Button>
+      </div>
+      <div className="flex gap-4 m-2">
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "00")}
+        >
+          00
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + "0")}
+        >
+          0
+        </Button>
+        <Button
+          className="rounded-full"
+          onClick={() => setNumber(number + ".")}
+        >
+          .
+        </Button>
+        <Button
+          className="rounded-full bg-orange-600"
+          onClick={() => setNumber(eval(number))}
+        >
+          =
+        </Button>
+      </div>
     </div>
 </body>
 </html>
+
+
