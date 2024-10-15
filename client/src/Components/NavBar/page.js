@@ -145,7 +145,7 @@ const CustomNavbar = () => {
           <Button
             as={Link}
             className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
-            href="/login"
+            href="/Rider"
             variant="flat"
           >
             Rider
