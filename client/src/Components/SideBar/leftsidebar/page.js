@@ -59,13 +59,6 @@ const LeftSideBar = () => {
                   <p>Prices</p>
                 </div>
 
-
-
-
-
-              
-
-
     <Card className="w-[150px] h-[150px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
       <CardBody className="justify-center items-center pb-0">
         <CircularProgress

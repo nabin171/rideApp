@@ -40,7 +40,7 @@ import {
 
 const CustomNavbar = () => {
   const icons = {
-    chevron: <FaChevronDown size={16} />,
+    chevron: <FaChevronDown size={16} className="bg-transparent text-xl text-transparent bg-clip-text data-[hover=true]:bg-transparent  bg-gradient-to-r from-pink-500  to-blue-500 m-1"/>,
     scale: <FaBoltLightning className="text-warning" size={30} />,
     lock: <RiCalendarScheduleLine className="text-success" size={30} />,
     activity: <MdPayment className="text-secondary" size={30} />,
@@ -76,7 +76,8 @@ const CustomNavbar = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-pink-400 text-base   "
+        
+                className="bg-transparent text-xl text-transparent bg-clip-text data-[hover=true]:bg-transparent  bg-gradient-to-r from-pink-500  to-blue-500 m-1"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -133,7 +134,7 @@ const CustomNavbar = () => {
           <Button
             as={Link}
             className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
-            href="/login"
+            href="/Driver"
             variant="flat"
           >
             Driver
@@ -175,7 +176,7 @@ const CustomNavbar = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="bg-indigo-300 rounded-xl flex justify-center">
+        <NavbarItem className="bg-gray-300 rounded-xl flex justify-center">
           <Button
             as={Link}
             className=" bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
@@ -186,7 +187,7 @@ const CustomNavbar = () => {
           </Button>
         </NavbarItem>
 
-        <NavbarItem className="bg-indigo-300 rounded-xl flex justify-center">
+        <NavbarItem className="bg-gray-300 rounded-xl flex justify-center">
           <Button
             as={Link}
             className="bg-clip-text text-base text-transparent bg-gradient-to-r from-pink-500 to-blue-500"

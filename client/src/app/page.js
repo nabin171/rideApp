@@ -1,3 +1,4 @@
+"use client"
 import CustomNavbar from "@/Components/NavBar/page";
 import { IoBarChartSharp } from "react-icons/io5";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
@@ -11,13 +12,14 @@ import { Avatar } from "@nextui-org/react";
 import { IoMdSettings } from "react-icons/io";
 import { IoMdTime } from "react-icons/io";
 import Footer from "@/Components/Footer/page";
+import { useRouter } from "next/navigation";
 
 const homepage = () => {
+  const router = useRouter()
   return (
     <div className="relative ">
-     
-        <CustomNavbar></CustomNavbar>
-     
+      <CustomNavbar></CustomNavbar>
+
       <div className="flex pt-10 pl-20 ">
         <div className="pic ">
           <img src="/p2.webp" width={720} height={1000}></img>
@@ -106,10 +108,12 @@ const homepage = () => {
                   Apply to drive
                 </Button>
               </div>
-              <p className="font-semibold flex">How driver pay works </p>
-              <p>
-                <FaArrowRight size={20} />{" "}
-              </p>
+              <div onClick={() => router.push("https://www.instagram.com")} className="flex gap-2 cursor-pointer">
+                <p className="font-semibold flex">How driver pay works </p>
+                <p>
+                  <FaArrowRight size={20} />{" "}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -18,36 +18,45 @@ const Footer = () => {
   return (
     <div className="flex flex-col bg-black">
       <div className=" w-full h-72 flex gap-32 pl-20 pt-10">
-        <div>
+        <Button className="bg-black" as={Link} href="/">
           <img
             src="/mylogo.png"
             width={100}
             height={70}
-            className="rounded m-1"
+            className="rounded m-1 cursor-pointer"
           ></img>
-        </div>
+        </Button>
+
+     
+
         <div className="flex flex-col gap-2">
-          <div className="text-gray-200">Driver</div>
+          <div
+            className="text-gray-200 cursor-pointer"
+            onClick={() => router.push("/Driver")}
+          >
+            Driver
+          </div>
+
           <div className="text-gray-400">
-            <p>Earnings</p>
-            <p>Cities</p>
-            <p>Safety</p>
-            <p>Bonus</p>
-            <p>Application Requirements</p>
-            <p>New Driver Guide</p>
-            <p>Express Rewards</p>
-            <p>Insurance</p>
+            <p className="cursor-pointer">Earnings</p>
+            <p className="cursor-pointer">Cities</p>
+            <p className="cursor-pointer">Safety</p>
+            <p className="cursor-pointer">Bonus</p>
+            <p className="cursor-pointer">Application Requirements</p>
+            <p className="cursor-pointer">New Driver Guide</p>
+            <p className="cursor-pointer">Express Rewards</p>
+            <p className="cursor-pointer">Insurance</p>
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <div className="text-gray-200">Rider</div>
           <div className="text-gray-400">
-            <p>Sign up to ride</p>
-            <p>Business Profile</p>
-            <p>Rewards</p>
-            <p>Events</p>
-            <p>Gift Cards</p>
-            <p>Donate</p>
+            <p className="cursor-pointer">Sign up to ride</p>
+            <p className="cursor-pointer">Business Profile</p>
+            <p className="cursor-pointer">Rewards</p>
+            <p className="cursor-pointer">Events</p>
+            <p className="cursor-pointer">Gift Cards</p>
+            <p className="cursor-pointer">Donate</p>
           </div>
         </div>
         <div className="flex flex-col gap-5">
@@ -56,28 +65,28 @@ const Footer = () => {
             <div className="flex gap-2">
               <p>
                 <FaFacebook
-                  className="text-white "
+                  className="text-white cursor-pointer"
                   onClick={() => router.push("https://www.facebook.com")}
                   size={20}
                 />
               </p>
               <p>
                 <FaInstagramSquare
-                  className="text-white "
+                  className="text-white cursor-pointer"
                   onClick={() => router.push("https://www.instagram.com")}
                   size={20}
                 />
               </p>
               <p>
                 <FaTwitter
-                  className="text-white "
+                  className="text-white cursor-pointer"
                   size={20}
                   onClick={() => router.push("https://www.twitter.com")}
                 />
               </p>
               <p>
                 <FaLinkedin
-                  className="text-white "
+                  className="text-white cursor-pointer"
                   onClick={() => router.push("https://www.linkedln.com")}
                   size={20}
                 />
@@ -98,7 +107,7 @@ const Footer = () => {
               }
             />
 
-            <div className="bg-indigo-300 w-32 rounded-xl flex justify-center">
+            <div className="bg-gray-300 w-32 rounded-xl flex justify-center">
               <button
                 as={Link}
                 className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
@@ -112,10 +121,10 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-2">
-          <p>
+          <p className="cursor-pointer">
             <MdLanguage size={20} className="text-white" />
           </p>
-          <p className="text-white">EN</p>
+          <p className="text-white cursor-pointer">EN</p>
         </div>
       </div>
       <div>
