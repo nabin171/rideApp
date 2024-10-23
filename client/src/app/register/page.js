@@ -17,24 +17,22 @@ import axios from "axios";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 
-
 const Register = () => {
-
-   const signUpSchema = Yup.object().shape({
-     cpassword: Yup.string()
-       .min(2, "Too Short!")
-       .max(50, "Too Long!")
-       .required("Required"),
-     password: Yup.string()
-       .min(2, "Too Short!")
-       .max(50, "Too Long!")
-       .required("Required"),
-     userName: Yup.string()
-       .min(2, "Too Short!")
-       .max(50, "Too Long!")
-       .required("Required"),
-     email: Yup.string().email("Invalid email").required("Required"),
-   });
+  const signUpSchema = Yup.object().shape({
+    cpassword: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    password: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    userName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -59,9 +57,7 @@ const Register = () => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="">
-      
-        <CustomNavbar></CustomNavbar>
-     
+      <CustomNavbar></CustomNavbar>
 
       <div className="rounded-2xl container flex  hsl(var(--nextui-background) / 0.7) justify-center items-center min-h-screen  min-w-full shadow-lg ">
         <div className="box flex flex-col  gap-5 p-4 bg-gray-100 ">
