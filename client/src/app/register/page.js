@@ -16,25 +16,36 @@ import * as Yup from "yup";
 import axios from "axios";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
-const loginSchema = Yup.object().shape({
-  password: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-});
+
+
 const Register = () => {
+
+   const signUpSchema = Yup.object().shape({
+     cpassword: Yup.string()
+       .min(2, "Too Short!")
+       .max(50, "Too Long!")
+       .required("Required"),
+     password: Yup.string()
+       .min(2, "Too Short!")
+       .max(50, "Too Long!")
+       .required("Required"),
+     userName: Yup.string()
+       .min(2, "Too Short!")
+       .max(50, "Too Long!")
+       .required("Required"),
+     email: Yup.string().email("Invalid email").required("Required"),
+   });
+
   const formik = useFormik({
     initialValues: {
+      userName: "",
       password: "",
-      confirmpassword: "",
+      cpassword: "",
       email: "",
-      username: "",
-      gender: "",
     },
-    validationSchema: loginSchema,
+    validationSchema: signUpSchema,
     onSubmit: (values) => {
-      registerUser(values);
+      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -84,16 +95,16 @@ const Register = () => {
             {formik.errors.email}
             <Input
               isRequired
-              type="username"
-              label="Username"
+              type="userName"
+              label="UserName"
               placeholder="Enter your username"
               className="max-w-xs"
-              id="username"
-              name="username"
+              id="userName"
+              name="userName"
               onChange={formik.handleChange}
-              value={formik.values.username}
+              value={formik.values.userName}
             />
-            {formik.errors.username}
+            {formik.errors.userName}
             <div>
               <Input
                 isRequired
@@ -115,12 +126,12 @@ const Register = () => {
               label="Confirm your Password"
               className="max-w-xs"
               placeholder="Enter your password"
-              id="confirmpassword"
-              name="confirmpassword"
+              id="cpassword"
+              name="cpassword"
               onChange={formik.handleChange}
-              value={formik.values.confirmpassword}
+              value={formik.values.cpassword}
             />
-            {formik.errors.confirmpassword}
+            {formik.errors.cpassword}
           </div>
 
           <Select

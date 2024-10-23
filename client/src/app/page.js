@@ -14,7 +14,7 @@ import { IoMdTime } from "react-icons/io";
 import Footer from "@/Components/Footer/page";
 import { useRouter } from "next/navigation";
 
-const homepage = () => {
+const HomePage = () => {
   const router = useRouter()
   return (
     <div className="relative ">
@@ -102,7 +102,7 @@ const homepage = () => {
                 <Button
                   as={Link}
                   className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-                  href="/register"
+                  href="/Driver"
                   variant="flat"
                 >
                   Apply to drive
@@ -128,4 +128,4 @@ const homepage = () => {
   );
 };
 
-export default homepage;
+export default HomePage;

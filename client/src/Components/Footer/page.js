@@ -27,8 +27,6 @@ const Footer = () => {
           ></img>
         </Button>
 
-     
-
         <div className="flex flex-col gap-2">
           <div
             className="text-gray-200 cursor-pointer"
@@ -51,7 +49,9 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           <div className="text-gray-200">Rider</div>
           <div className="text-gray-400">
-            <p className="cursor-pointer">Sign up to ride</p>
+            <p className="cursor-pointer"  onClick={() => router.push("/SignUpToRide")}>
+              Sign up to ride
+            </p>
             <p className="cursor-pointer">Business Profile</p>
             <p className="cursor-pointer">Rewards</p>
             <p className="cursor-pointer">Events</p>
@@ -111,7 +111,7 @@ const Footer = () => {
               <button
                 as={Link}
                 className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-                href="/login"
+                href="/#"
                 variant="flat"
               >
                 Subscribe
