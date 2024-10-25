@@ -33,7 +33,7 @@ const page = () => {
      
         <CustomNavbar></CustomNavbar>
       
-      <div className=" rounded-2xl     container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg      ">
+      <div className=" rounded-2xl    container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg      ">
         <div className="box flex flex-col  gap-5 p-4 bg-gray-200">
           <div className="flex justify-between">
             <img
