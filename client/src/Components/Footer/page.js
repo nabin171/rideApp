@@ -36,10 +36,26 @@ const Footer = () => {
           </div>
 
           <div className="text-gray-400">
-            <p className="cursor-pointer">Earnings</p>
+          
+          
+              <p
+                className="cursor-pointer"
+                onClick={() => router.push("/Earnings")}
+              >
+               Earnings
+              </p>
+       
             <p className="cursor-pointer">Cities</p>
             <p className="cursor-pointer">Safety</p>
-            <p className="cursor-pointer">Bonus</p>
+
+            <p 
+            className="cursor-pointer"
+             onClick={() => router.push("/Bonus")}>Bonus
+
+
+              
+            </p>
+
             <p className="cursor-pointer">Application Requirements</p>
             <p className="cursor-pointer">New Driver Guide</p>
             <p className="cursor-pointer">Express Rewards</p>
@@ -49,7 +65,10 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           <div className="text-gray-200">Rider</div>
           <div className="text-gray-400">
-            <p className="cursor-pointer"  onClick={() => router.push("/SignUpToRide")}>
+            <p
+              className="cursor-pointer"
+              onClick={() => router.push("/SignUpToRide")}
+            >
               Sign up to ride
             </p>
             <p className="cursor-pointer">Business Profile</p>

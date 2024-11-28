@@ -84,10 +84,10 @@ const page = () => {
 
           <div className="bg-gray-800 rounded-xl flex justify-center">
             <Button
-              as={Link}
+             type="submit"
               className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-              href="/dashboard"
-              variant="flat"
+         
+             
             >
               Login
             </Button>

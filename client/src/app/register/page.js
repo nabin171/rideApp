@@ -36,14 +36,15 @@ const Register = () => {
 
   const formik = useFormik({
     initialValues: {
+      email: "",
       userName: "",
       password: "",
       cpassword: "",
-      email: "",
+      gender: "",
     },
-    validationSchema: signUpSchema,
+    validationSchema: signUpSchema, // Add this
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
     },
   });
 
@@ -142,12 +143,10 @@ const Register = () => {
 
           <div className="bg-gray-800 rounded-xl flex justify-center">
             <Button
-              as={Link}
+              type="submit"
               className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-              href="/login"
-              variant="flat"
             >
-              Sign Up
+              Submit
             </Button>
           </div>
 

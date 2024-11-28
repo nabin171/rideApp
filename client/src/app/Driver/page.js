@@ -141,7 +141,7 @@ const page = () => {
         </div>
         <div className="flex flex-col gap-8">
           <h2 className="heading  text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 ">
-            Wanna Become A Part of Our Dedicated Team of <br></br>Cabsy Drivers?
+            Wanna Become A Part of Our Dedicated Team of <br></br>ExpressRides Drivers?
           </h2>
          
             <div className="bg-gray-800  rounded-xl w-56 text-center">
