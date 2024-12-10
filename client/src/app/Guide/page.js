@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { DollarSign, Clock, TrendingUp, Gift } from "lucide-react";
+import { MapPin, CheckCircle, Users, DollarSign } from "lucide-react";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 
-const Earnings = () => {
+const NewDriverGuide = () => {
   return (
     <div>
       <CustomNavbar />
@@ -12,84 +12,90 @@ const Earnings = () => {
         {/* Main Heading */}
         <div className="flex justify-center">
           <h1 className="heading text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8">
-            Driver Earnings
+            New Driver Guide
           </h1>
         </div>
 
-        {/* Earnings Cards */}
+        {/* Steps to Get Started */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <DollarSign className="h-6 w-6 text-purple-400 mt-1" />
+            <MapPin className="h-6 w-6 text-green-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Base Fares
+                Step 1: Register Your Account
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn competitive base rates for every trip you complete.
+                Sign up online by providing your basic details and required
+                documents.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Clock className="h-6 w-6 text-purple-400 mt-1" />
+            <CheckCircle className="h-6 w-6 text-purple-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Flexible Payments
+                Step 2: Pass Verification
               </h3>
               <p className="text-gray-300 mt-2">
-                Cash out your earnings up to 5 times per day with instant pay.
+                Complete the verification process, including background checks
+                and vehicle inspection.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <TrendingUp className="h-6 w-6 text-purple-400 mt-1" />
+            <Users className="h-6 w-6 text-blue-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Surge Pricing
+                Step 3: Attend Orientation
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn more during peak hours and high-demand periods.
+                Learn the basics of using the platform, safety guidelines, and
+                tips for success.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Gift className="h-6 w-6 text-purple-400 mt-1" />
+            <DollarSign className="h-6 w-6 text-yellow-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Tips & Bonuses
+                Step 4: Start Earning
               </h3>
               <p className="text-gray-300 mt-2">
-                Keep 100% of your tips and earn extra through promotions.
+                Activate your account and start accepting ride requests to earn
+                money.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Weekly Earnings Breakdown */}
+        {/* Tips for Success */}
         <div className="bg-gray-900 rounded-lg p-8 mb-12">
           <div className="flex justify-center">
             <h2 className="heading text-center text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-6">
-              Weekly Earnings Breakdown
+              Tips for Success
             </h2>
           </div>
           <div className="space-y-4">
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Trip Earnings</span>
-              <span className="text-white font-semibold">$500-700</span>
+              <span className="text-gray-300">Keep Your Vehicle Clean</span>
+              <span className="text-gray-300">
+                Provide a comfortable experience for riders.
+              </span>
             </div>
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Tips</span>
-              <span className="text-white font-semibold">$50-100</span>
-            </div>
-            <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Bonuses</span>
-              <span className="text-white font-semibold">$100-200</span>
+              <span className="text-gray-300">Be Punctual</span>
+              <span className="text-gray-300">
+                Arrive on time to build a good reputation.
+              </span>
             </div>
             <div className="flex justify-between py-3">
-              <span className="text-gray-300">Potential Weekly Total</span>
-              <span className="text-purple-400 font-bold">$650-1000</span>
+              <span className="text-gray-300">Communicate Clearly</span>
+              <span className="text-gray-300">
+                Respond promptly to rider queries and updates.
+              </span>
             </div>
           </div>
         </div>
@@ -99,4 +105,4 @@ const Earnings = () => {
   );
 };
 
-export default Earnings;
+export default NewDriverGuide;

@@ -50,21 +50,23 @@ import { Gift, Target, Award, Zap } from "lucide-react";
     },
   ]
   return (
-    
-    <div>
-        <CustomNavbar></CustomNavbar>
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-          Driver Bonuses
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div className="pb-4">
+      <CustomNavbar></CustomNavbar>
+      <div className="max-w-6xl mx-auto mt-6">
+        <div className="flex justify-center ">
+          <h2 className="heading text-right text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
+            Driver Bonuses
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 mt-6">
           <div className="bg-gray-900 rounded-lg p-6">
             <div className="flex items-center space-x-3 mb-4">
               <Gift className="h-6 w-6 text-purple-400" />
-              <h2 className="text-xl font-semibold text-purple-400">
-                Sign-up Bonus
-              </h2>
+              <div className="flex justify-center">
+                <h2 className="heading text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
+                  Sign Up Bonuses
+                </h2>
+              </div>
             </div>
             <p className="text-gray-300 mb-4">
               New drivers can earn up to $1000 bonus after completing their
@@ -84,9 +86,11 @@ import { Gift, Target, Award, Zap } from "lucide-react";
           <div className="bg-gray-900 rounded-lg p-6">
             <div className="flex items-center space-x-3 mb-4">
               <Target className="h-6 w-6 text-purple-400" />
-              <h2 className="text-xl font-semibold text-purple-400">
-                Quest Rewards
-              </h2>
+              <div className="flex justify-center">
+                <h2 className="heading text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
+                  Quest Rewards
+                </h2>
+              </div>
             </div>
             <p className="text-gray-300 mb-4">
               Complete quests to earn extra rewards on top of your regular
@@ -115,9 +119,11 @@ import { Gift, Target, Award, Zap } from "lucide-react";
           <div className="bg-gray-900 rounded-lg p-6">
             <div className="flex items-center space-x-3 mb-4">
               <Zap className="h-6 w-6 text-purple-400" />
-              <h2 className="text-xl font-semibold text-purple-400">
-                Surge Pricing
-              </h2>
+              <div className="flex justify-center">
+                <h2 className="heading text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
+                  Surge Pricing
+                </h2>
+              </div>
             </div>
             <p className="text-gray-300 mb-4">
               Earn more during high-demand periods with surge pricing
@@ -141,10 +147,12 @@ import { Gift, Target, Award, Zap } from "lucide-react";
         </div>
 
         <div className="bg-gray-900 rounded-lg p-8">
-          <h2 className="text-2xl font-semibold mb-6 text-purple-400">
-            Weekly Bonus Calendar
-          </h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex justify-center">
+            <h2 className="heading text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
+          Weekly Bonus Calender
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 pt-4">
             {bonusCalendar.map((day) => (
               <div key={day.day} className="bg-gray-800 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-white mb-2">
@@ -157,7 +165,7 @@ import { Gift, Target, Award, Zap } from "lucide-react";
                       className="flex justify-between text-gray-300"
                     >
                       <span>{bonus.time}</span>
-                      <span className="text-purple-400">{bonus.amount}</span>
+                      <span className="text-purple-400 ">{bonus.amount}</span>
                     </div>
                   ))}
                 </div>

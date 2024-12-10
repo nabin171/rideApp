@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { DollarSign, Clock, TrendingUp, Gift } from "lucide-react";
+import { ClipboardList, FileText, Calendar, Smartphone } from "lucide-react";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 
-const Earnings = () => {
+const Requirements = () => {
   return (
     <div>
       <CustomNavbar />
@@ -12,84 +12,90 @@ const Earnings = () => {
         {/* Main Heading */}
         <div className="flex justify-center">
           <h1 className="heading text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8">
-            Driver Earnings
+            Application Requirements
           </h1>
         </div>
 
-        {/* Earnings Cards */}
+        {/* Requirements Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <DollarSign className="h-6 w-6 text-purple-400 mt-1" />
+            <ClipboardList className="h-6 w-6 text-green-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Base Fares
+                Valid ID Proof
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn competitive base rates for every trip you complete.
+                Submit a government-issued ID such as a passport, driver’s
+                license, or national ID.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Clock className="h-6 w-6 text-purple-400 mt-1" />
+            <FileText className="h-6 w-6 text-purple-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Flexible Payments
+                Vehicle Registration
               </h3>
               <p className="text-gray-300 mt-2">
-                Cash out your earnings up to 5 times per day with instant pay.
+                Ensure your vehicle is registered and meets all local
+                regulations.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <TrendingUp className="h-6 w-6 text-purple-400 mt-1" />
+            <Calendar className="h-6 w-6 text-blue-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Surge Pricing
+                Minimum Age
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn more during peak hours and high-demand periods.
+                You must be at least 18 years old to apply and meet the minimum
+                age requirements.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Gift className="h-6 w-6 text-purple-400 mt-1" />
+            <Smartphone className="h-6 w-6 text-yellow-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Tips & Bonuses
+                Smartphone with Internet
               </h3>
               <p className="text-gray-300 mt-2">
-                Keep 100% of your tips and earn extra through promotions.
+                You’ll need a smartphone with a stable internet connection to
+                access the app.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Weekly Earnings Breakdown */}
+        {/* Additional Information Section */}
         <div className="bg-gray-900 rounded-lg p-8 mb-12">
           <div className="flex justify-center">
             <h2 className="heading text-center text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-6">
-              Weekly Earnings Breakdown
+              Additional Information
             </h2>
           </div>
           <div className="space-y-4">
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Trip Earnings</span>
-              <span className="text-white font-semibold">$500-700</span>
+              <span className="text-gray-300">Background Check</span>
+              <span className="text-gray-300">
+                All applicants must pass a background screening process.
+              </span>
             </div>
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Tips</span>
-              <span className="text-white font-semibold">$50-100</span>
-            </div>
-            <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Bonuses</span>
-              <span className="text-white font-semibold">$100-200</span>
+              <span className="text-gray-300">Vehicle Insurance</span>
+              <span className="text-gray-300">
+                Proof of valid vehicle insurance is mandatory.
+              </span>
             </div>
             <div className="flex justify-between py-3">
-              <span className="text-gray-300">Potential Weekly Total</span>
-              <span className="text-purple-400 font-bold">$650-1000</span>
+              <span className="text-gray-300">Driving Experience</span>
+              <span className="text-gray-300">
+                A minimum of 1 year of driving experience is required.
+              </span>
             </div>
           </div>
         </div>
@@ -99,4 +105,4 @@ const Earnings = () => {
   );
 };
 
-export default Earnings;
+export default Requirements;

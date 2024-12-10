@@ -44,7 +44,7 @@ const Register = () => {
     },
     validationSchema: signUpSchema, // Add this
     onSubmit: (values) => {
-      console.log(values);
+     registerUser(values);
     },
   });
 

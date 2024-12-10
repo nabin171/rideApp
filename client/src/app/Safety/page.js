@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { DollarSign, Clock, TrendingUp, Gift } from "lucide-react";
+import { ShieldCheck, Heart, Eye, AlertTriangle } from "lucide-react";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 
-const Earnings = () => {
+const Safety = () => {
   return (
     <div>
       <CustomNavbar />
@@ -12,84 +12,88 @@ const Earnings = () => {
         {/* Main Heading */}
         <div className="flex justify-center">
           <h1 className="heading text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-8">
-            Driver Earnings
+            Commitment to Safety
           </h1>
         </div>
 
-        {/* Earnings Cards */}
+        {/* Safety Features Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <DollarSign className="h-6 w-6 text-purple-400 mt-1" />
+            <ShieldCheck className="h-6 w-6 text-green-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Base Fares
+                Verified Drivers
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn competitive base rates for every trip you complete.
+                All drivers are thoroughly vetted and verified for your safety.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Clock className="h-6 w-6 text-purple-400 mt-1" />
+            <Heart className="h-6 w-6 text-red-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Flexible Payments
+                24/7 Support
               </h3>
               <p className="text-gray-300 mt-2">
-                Cash out your earnings up to 5 times per day with instant pay.
+                Our support team is available around the clock to assist you.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <TrendingUp className="h-6 w-6 text-purple-400 mt-1" />
+            <Eye className="h-6 w-6 text-blue-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Surge Pricing
+                Real-Time Tracking
               </h3>
               <p className="text-gray-300 mt-2">
-                Earn more during peak hours and high-demand periods.
+                Track your ride in real-time from pickup to drop-off.
               </p>
             </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-6 flex items-start space-x-4">
-            <Gift className="h-6 w-6 text-purple-400 mt-1" />
+            <AlertTriangle className="h-6 w-6 text-yellow-400 mt-1" />
             <div>
               <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
-                Tips & Bonuses
+                Emergency Assistance
               </h3>
               <p className="text-gray-300 mt-2">
-                Keep 100% of your tips and earn extra through promotions.
+                Access emergency assistance directly from the app during your
+                ride.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Weekly Earnings Breakdown */}
+        {/* Safety Tips Section */}
         <div className="bg-gray-900 rounded-lg p-8 mb-12">
           <div className="flex justify-center">
             <h2 className="heading text-center text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-6">
-              Weekly Earnings Breakdown
+              Safety Tips for Riders
             </h2>
           </div>
           <div className="space-y-4">
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Trip Earnings</span>
-              <span className="text-white font-semibold">$500-700</span>
+              <span className="text-gray-300">Verify Your Driver</span>
+              <span className="text-gray-300">
+                Match the driver's details with the app before starting your
+                ride.
+              </span>
             </div>
             <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Tips</span>
-              <span className="text-white font-semibold">$50-100</span>
-            </div>
-            <div className="flex justify-between py-3 border-b border-gray-800">
-              <span className="text-gray-300">Bonuses</span>
-              <span className="text-white font-semibold">$100-200</span>
+              <span className="text-gray-300">Share Your Trip</span>
+              <span className="text-gray-300">
+                Use the app to share your trip details with friends or family.
+              </span>
             </div>
             <div className="flex justify-between py-3">
-              <span className="text-gray-300">Potential Weekly Total</span>
-              <span className="text-purple-400 font-bold">$650-1000</span>
+              <span className="text-gray-300">Trust Your Instincts</span>
+              <span className="text-gray-300">
+                If you ever feel unsafe, don't hesitate to cancel the ride.
+              </span>
             </div>
           </div>
         </div>
@@ -99,4 +103,4 @@ const Earnings = () => {
   );
 };
 
-export default Earnings;
+export default Safety;

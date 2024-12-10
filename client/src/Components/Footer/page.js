@@ -36,28 +36,41 @@ const Footer = () => {
           </div>
 
           <div className="text-gray-400">
-          
-          
-              <p
-                className="cursor-pointer"
-                onClick={() => router.push("/Earnings")}
-              >
-               Earnings
-              </p>
-       
-            <p className="cursor-pointer">Cities</p>
-            <p className="cursor-pointer">Safety</p>
-
-            <p 
-            className="cursor-pointer"
-             onClick={() => router.push("/Bonus")}>Bonus
-
-
-              
+            <p
+              className="cursor-pointer"
+              onClick={() => router.push("/Earnings")}
+            >
+              Earnings
             </p>
 
-            <p className="cursor-pointer">Application Requirements</p>
-            <p className="cursor-pointer">New Driver Guide</p>
+            <p
+              className="cursor-pointer"
+              onClick={() => router.push("/Cities")}
+            >
+              Cities
+            </p>
+
+            <p
+              className="cursor-pointer"
+              onClick={() => router.push("/Safety")}
+            >
+              Safety
+            </p>
+
+            <p className="cursor-pointer" onClick={() => router.push("/Bonus")}>
+              Bonus
+            </p>
+            <p
+              className="cursor-pointer"
+              onClick={() => router.push("/Requirements")}
+            >
+              Requirements
+            </p>
+            <p className="cursor-pointer" onClick={() => router.push("/Guide")}>
+              New Driver Guide
+            </p>
+
+
             <p className="cursor-pointer">Express Rewards</p>
             <p className="cursor-pointer">Insurance</p>
           </div>
