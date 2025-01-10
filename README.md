@@ -1,4 +1,4 @@
-<img width="669" alt="Screenshot 2025-01-10 at 11 38 54 AM" src="https://github.com/user-attachments/assets/17331cbc-8915-4ac3-b3a0-4c8b2965c565" />
+
 Ride App - MERN Stack Project
 
 Overview
