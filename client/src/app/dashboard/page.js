@@ -61,7 +61,6 @@
 //             <img src="/map.png" width={878} height={1100}></img>
 //           </div>
 
-  
 //           <main
 //             style={{ height: "577px" }}
 //             class="flex-grow gap-8 w-[17.5rem]  bg-gray-100 "
@@ -75,8 +74,6 @@
 // };
 
 // export default dashboard;
-
-
 
 "use client";
 
@@ -110,6 +107,8 @@ import {
 import { motion } from "framer-motion";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+
 
 export default function Dashboard() {
   const [selectedVehicle, setSelectedVehicle] = useState("standard");
@@ -118,7 +117,8 @@ export default function Dashboard() {
     condition: "Sunny",
     windSpeed: "10 km/h",
   });
-
+  const mapStyles = { height: "100vh", width: "100%" };
+  const defaultCenter = { lat: 27.7172, lng: 85.324 }; // Example: Kathmandu, Nepal
   const vehicles = {
     economy: { price: 160, time: "10 min", icon: "🚗", color: "primary" },
     standard: { price: 200, time: "8 min", icon: "🚙", color: "secondary" },
@@ -160,7 +160,7 @@ export default function Dashboard() {
           </NavbarItem>
         </NavbarContent>
       </Navbar> */}
-<CustomNavbar></CustomNavbar>
+      <CustomNavbar></CustomNavbar>
       <div className="container mx-auto py-6 px-4 grid gap-6 md:grid-cols-2">
         {/* Map Section */}
         <Card className="col-span-2 md:col-span-1">
@@ -172,13 +172,14 @@ export default function Dashboard() {
               </p>
             </div>
           </CardHeader>
-          <CardBody className="p-0 aspect-video relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/5 backdrop-blur-sm">
-              <div className="h-full w-full flex items-center justify-center text-default-500">
-                Interactive Map View
-              </div>
-            </div>
-          </CardBody>
+
+          <LoadScript googleMapsApiKey="AIzaSyA2AlgZB7D8AJp3O5neaUxoCkPhz_MUjYw">
+            <GoogleMap
+              mapContainerStyle={mapStyles}
+              center={defaultCenter}
+              zoom={10}
+            />
+          </LoadScript>
         </Card>
 
         <div className="space-y-6">
@@ -323,4 +324,3 @@ export default function Dashboard() {
     </div>
   );
 }
-

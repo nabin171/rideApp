@@ -13,7 +13,7 @@ const loginSchema = Yup.object().shape({
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
 });
-const page = () => {
+const Login = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
@@ -21,18 +21,25 @@ const page = () => {
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      console.log(values);
+      loginUser(values);
     },
   });
+
+  const loginUser = async (values) => {
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/login`,
+      values
+    );
+    if (data) alert("login successfully");
+  };
 
   return (
     <form
       onSubmit={formik.handleSubmit}
       className="flex flex-col  min-h-screen "
     >
-     
-        <CustomNavbar></CustomNavbar>
-      
+      <CustomNavbar></CustomNavbar>
+
       <div className=" rounded-2xl    container hsl(var(--nextui-background) / 0.7) flex justify-center items-center min-h-screen min-w-full shadow-lg      ">
         <div className="box flex flex-col  gap-5 p-4 bg-gray-200">
           <div className="flex justify-between">
@@ -84,10 +91,8 @@ const page = () => {
 
           <div className="bg-gray-800 rounded-xl flex justify-center">
             <Button
-             type="submit"
+              type="submit"
               className=" text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1"
-         
-             
             >
               Login
             </Button>
@@ -178,4 +183,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Login;
