@@ -172,7 +172,9 @@ export default function Dashboard() {
             </div>
           </CardHeader>
 
-          <LoadScript googleMapsApiKey="REACT_APP_GOOGLE_MAPS_API_KEY">
+          <LoadScript
+            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+          >
             <GoogleMap
               mapContainerStyle={mapStyles}
               center={defaultCenter}
