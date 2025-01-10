@@ -46,18 +46,18 @@ State Management:
 
 
 RideApp/
-├── client/            # Frontend code
+├── client/          # Frontend code
 │   ├── src/
 │   │   ├── Components/
 │   │   ├── pages/
 │   ├── public/
 │   └── ...
-├── server/           # Backend code
+├── server/          # Backend code
 │   ├── routes/
 │   ├── controllers/
 │   ├── models/
 │   └── ...
-└── .env              # Environment variables
+└── .env             # Environment variables
 
 
 
