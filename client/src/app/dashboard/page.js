@@ -109,7 +109,6 @@ import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
-
 export default function Dashboard() {
   const [selectedVehicle, setSelectedVehicle] = useState("standard");
   const [weatherData] = useState({
@@ -173,7 +172,7 @@ export default function Dashboard() {
             </div>
           </CardHeader>
 
-          <LoadScript googleMapsApiKey="AIzaSyA2AlgZB7D8AJp3O5neaUxoCkPhz_MUjYw">
+          <LoadScript googleMapsApiKey="REACT_APP_GOOGLE_MAPS_API_KEY">
             <GoogleMap
               mapContainerStyle={mapStyles}
               center={defaultCenter}
