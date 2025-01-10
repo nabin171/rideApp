@@ -46,18 +46,26 @@ State Management:
 
 
 RideApp/
-├── client/          # Frontend code
+├── client/                   # Frontend code
 │   ├── src/
-│   │   ├── Components/
-│   │   ├── pages/
-│   ├── public/
-│   └── ...
-├── server/          # Backend code
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── ...
-└── .env             # Environment variables
+│   │   ├── components/       # React components
+│   │   ├── pages/            # Page components (e.g., Home, Login, Signup)
+│   │   ├── assets/           # Images, icons, and other static assets
+│   │   ├── styles/           # Global styles (e.g., CSS, SCSS)
+│   │   └── App.js            # Main app component
+│   ├── public/               # Public assets (e.g., index.html)
+│   └── package.json          # Frontend dependencies and scripts
+├── server/                   # Backend code
+│   ├── controllers/          # Controller files handling request logic
+│   ├── routes/               # API routes
+│   ├── models/               # Database models
+│   ├── utils/                # Utility functions and helpers
+│   ├── config/               # Server configurations (e.g., database setup)
+│   └── server.js             # Entry point for backend server
+├── .env                       # Environment variables (e.g., API keys, DB credentials)
+├── .gitignore                 # Git ignore file
+└── package.json               # Project dependencies and scripts
+
 
 
 
