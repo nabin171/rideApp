@@ -29,8 +29,8 @@ const User = mongoose.model("User", userSchema);
 app.post("/register", async (req, res) => {
   //step1:req.body.emailshould not exist in db
   const user = await User.exists({ email: req.body.email });
-  console.log(user);
-  if (user) return res.send("Email is taken");
+
+  if (user) return res.status(409).send("Email is taken");
 
   //yes it exist -->end and prompt email already in use
 
@@ -41,7 +41,7 @@ app.post("/register", async (req, res) => {
 
   //save the new details with hash password in db
   User.create(req.body);
-  res.send("User created succesfully");
+  res.send("Registered succesfully");
 });
 
 app.post("/login", async (req, res) => {
@@ -55,7 +55,7 @@ app.post("/login", async (req, res) => {
   const isMatched = await bcrypt.compare(req.body.password, user.password);
   console.log(isMatched);
   //no -->invalid email
-  if (!isMatched) res.send("Invalid Password!!");
+  if (!isMatched) res.status(401).send("Invalid Password!!");
 
   const token = jwt.sign(
     { email: req.body.email },

@@ -16,8 +16,12 @@ import * as Yup from "yup";
 import axios from "axios";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@radix-ui/react-toast";
 
 const Register = () => {
+  const { toast } = useToast();
+
   const signUpSchema = Yup.object().shape({
     cpassword: Yup.string()
       .min(2, "Too Short!")
@@ -44,16 +48,31 @@ const Register = () => {
     },
     validationSchema: signUpSchema, // Add this
     onSubmit: (values) => {
-     registerUser(values);
+      registerUser(values);
     },
   });
 
   const registerUser = async (values) => {
-    const { data } = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/register`,
-      values
-    );
-    if (data) alert("registered successfully");
+    try {
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/register`,
+        values
+      );
+      if (data)
+        toast({
+          title: data,
+          action: (
+            <ToastAction altText="Try again">Proceed to login</ToastAction>
+          ),
+        });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: error?.response?.data,
+        //  description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   };
 
   return (

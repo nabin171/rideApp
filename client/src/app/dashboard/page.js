@@ -1,83 +1,5 @@
-// "use client";
-// import React from "react";
-// import { FaSearch } from "react-icons/fa";
-// import { useFormik } from "formik";
-// import { IoNotificationsCircle } from "react-icons/io5";
-// import { TbSettingsFilled } from "react-icons/tb";
-// import { CardHeader, CardBody, Image, Input } from "@nextui-org/react";
-// import { Divider, Tabs, Tab, Card } from "@nextui-org/react";
-// import { IoBarChartSharp } from "react-icons/io5";
-// import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-// import { IoWalletSharp } from "react-icons/io5";
-// import { IoPerson } from "react-icons/io5";
-// import { FaStar } from "react-icons/fa6";
-// import { FaLocationDot, FaClock } from "react-icons/fa6";
-// import { HiMiniCurrencyDollar } from "react-icons/hi2";
-
-// import { MdLocationSearching } from "react-icons/md";
-
-// import {
-//   Navbar,
-//   NavbarBrand,
-//   NavbarContent,
-//   NavbarItem,
-//   Button,
-//   Checkbox,
-// } from "@nextui-org/react";
-// import { IoIosArrowDropdownCircle } from "react-icons/io";
-// import {
-//   Dropdown,
-//   DropdownTrigger,
-//   DropdownMenu,
-//   DropdownSection,
-//   DropdownItem,
-// } from "@nextui-org/dropdown";
-// import { useRouter } from "next/navigation";
-
-// import Link from "next/link";
-
-// import CustomNavbar from "@/Components/NavBar/page";
-// import LeftSideBar from "@/Components/SideBar/leftsidebar/page";
-// import RightSideBar from "@/Components/SideBar/rightsidebar/page";
-
-// const dashboard = () => {
-//   const router = useRouter();
-//   return (
-//     <div className="container min-w-full h-[100%] bg-slate-200">
-//       <div className=" bg-slate-800">
-//         <CustomNavbar></CustomNavbar>
-//       </div>
-
-//       <div className="flex">
-//         <div class="flex min-h-screen">
-//           <main
-//             style={{ height: "577px" }}
-//             class="flex-grow w-[17.5rem]  bg-gray-100 "
-//           >
-//             <LeftSideBar />
-//           </main>
-
-//           <div className="">
-//             <img src="/map.png" width={878} height={1100}></img>
-//           </div>
-
-//           <main
-//             style={{ height: "577px" }}
-//             class="flex-grow gap-8 w-[17.5rem]  bg-gray-100 "
-//           >
-//             <RightSideBar />
-//           </main>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default dashboard;
-
 "use client";
-
-import { useState } from "react";
+import { use, useState, useref } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -94,6 +16,8 @@ import {
   Avatar,
   Badge,
   Divider,
+  skeleton,
+  CircularProgress,
 } from "@nextui-org/react";
 import {
   MapPin,
@@ -107,7 +31,16 @@ import {
 import { motion } from "framer-motion";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  Autocomplete,
+} from "@react-google-maps/api";
+import { FaLocationArrow } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
+import { BsFillClockFill } from "react-icons/bs";
+import { FaCarSide } from "react-icons/fa";
 
 export default function Dashboard() {
   const [selectedVehicle, setSelectedVehicle] = useState("standard");
@@ -117,48 +50,28 @@ export default function Dashboard() {
     windSpeed: "10 km/h",
   });
   const mapStyles = { height: "100vh", width: "100%" };
-  const defaultCenter = { lat: 27.7172, lng: 85.324 }; // Example: Kathmandu, Nepal
+  const defaultCenter = { lat: 27.6855, lng: 85.3448 }; // Broadway Infosys, Subidhanagar, Tinkune, Kathmandu, Nepal
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    libraries: ["places"],
+  });
+  const [map, setMap] = useState(/** @type google.maps.Map */ (null));
+  const [directionResponse, setDirectionResponse] = useState(null);
+  if (!isLoaded) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <CircularProgress label="Loading..."  />
+      </div>
+    );
+  }
   const vehicles = {
     economy: { price: 160, time: "10 min", icon: "🚗", color: "primary" },
     standard: { price: 200, time: "8 min", icon: "🚙", color: "secondary" },
     premium: { price: 300, time: "5 min", icon: "🚘", color: "success" },
   };
-
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Section */}
-      {/* <Navbar isBordered>
-        <NavbarBrand>
-          <motion.p
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            className="font-bold text-inherit text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500"
-          >
-            RideHub
-          </motion.p>
-        </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem isActive>
-            <Button variant="light">Dashboard</Button>
-          </NavbarItem>
-          <NavbarItem>
-            <Button variant="light">History</Button>
-          </NavbarItem>
-          <NavbarItem>
-            <Button variant="light">Settings</Button>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Avatar
-              isBordered
-              color="secondary"
-              src="/placeholder.svg?height=32&width=32"
-              size="sm"
-            />
-          </NavbarItem>
-        </NavbarContent>
-      </Navbar> */}
       <CustomNavbar></CustomNavbar>
       <div className="container mx-auto py-6 px-4 grid gap-6 md:grid-cols-2">
         {/* Map Section */}
@@ -172,15 +85,20 @@ export default function Dashboard() {
             </div>
           </CardHeader>
 
-          <LoadScript
-            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+          <GoogleMap
+            center={defaultCenter}
+            zoom={15}
+            mapContainerStyle={{ width: "100%", height: "100%" }}
+            options={{
+              zoomControl: false,
+              streetViewControl: false,
+              mapTypeControl: false,
+              fullscreenControl: false,
+            }}
+            onLoad={(map) => setMap(map)}
           >
-            <GoogleMap
-              mapContainerStyle={mapStyles}
-              center={defaultCenter}
-              zoom={10}
-            />
-          </LoadScript>
+            <Marker position={defaultCenter} />
+          </GoogleMap>
         </Card>
 
         <div className="space-y-6">
@@ -273,37 +191,51 @@ export default function Dashboard() {
             </CardHeader>
             <CardBody>
               <div className="space-y-4">
-                <Input
-                  startContent={<MapPin className="h-4 w-4" />}
-                  label="From"
-                  placeholder="Current Location"
-                  variant="bordered"
-                />
-                <Input
-                  startContent={<MapPin className="h-4 w-4" />}
-                  label="To"
-                  placeholder="Office"
-                  variant="bordered"
-                />
+                <Autocomplete>
+                  <Input
+                    startContent={<MapPin className="h-4 w-4" />}
+                    label="From"
+                    placeholder="Current Location"
+                    variant="bordered"
+                    type="text"
+                  />
+                </Autocomplete>
+                <Autocomplete>
+                  <Input
+                    startContent={<MapPin className="h-4 w-4" />}
+                    label="To"
+                    placeholder="Destination"
+                    variant="bordered"
+                    type="text"
+                  />
+                </Autocomplete>
                 <Divider className="my-4" />
                 <div className="flex items-center gap-4">
                   <Chip
-                    startContent={<Clock className="h-4 w-4" />}
+                    startContent={<BsFillClockFill className="h-4 w-4" />}
                     variant="flat"
                   >
                     10 mins
                   </Chip>
                   <Chip
-                    startContent={<Car className="h-4 w-4" />}
+                    startContent={<FaCarSide className="h-4 w-4" />}
                     variant="flat"
                   >
                     2.6 km
                   </Chip>
                   <Chip
-                    startContent={<CreditCard className="h-4 w-4" />}
+                    startContent={<FaLocationArrow className="h-4 w-4" />}
                     variant="flat"
+                    onClick={() => map.panTo(defaultCenter)}
                   >
-                    Cash
+                    Center
+                  </Chip>
+                  <Chip
+                    startContent={<ImCross className="h-4 w-4" />}
+                    variant="flat"
+                    onClick={() => map.panTo(defaultCenter)}
+                  >
+                    Clear
                   </Chip>
                 </div>
               </div>
