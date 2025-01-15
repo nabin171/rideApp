@@ -108,6 +108,8 @@ import { motion } from "framer-motion";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import axios from "axios";
+import { useEffect } from "react";
 
 export default function Dashboard() {
   const [selectedVehicle, setSelectedVehicle] = useState("standard");
@@ -123,6 +125,47 @@ export default function Dashboard() {
     standard: { price: 200, time: "8 min", icon: "🚙", color: "secondary" },
     premium: { price: 300, time: "5 min", icon: "🚘", color: "success" },
   };
+const [placesOutputFrom, setPlacesOutputFrom] = useState([])
+const [placesOutputTo, setPlacesOutputTo] = useState([])
+
+const [cordsFrom, setCordsFrom]  =useState({})
+const [cordsTo, setCordsTo]  =useState({})
+const [distanceData, setDistanceData] = useState(0)
+  const fetchPlacesName = async(text, type)=>{
+    const {data} = await axios.get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&format=json&apiKey=490f9173e6a6441b98f94295be7b750d`)
+    if(data) debugger;
+    if(type=='from'){
+      setPlacesOutputFrom(data.results)
+    }else{
+      setPlacesOutputTo(data.results)
+    }
+  }
+
+  const fetchDistance =async()=>{
+   
+  if(data)  setDistanceData(data)
+  }
+
+  useEffect(()=>{
+    function deg2rad(deg) {
+      return deg * (Math.PI/180)
+    }
+    function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+      var R = 6371; // Radius of the earth in km
+      var dLat = deg2rad(lat2-lat1);  // deg2rad below
+      var dLon = deg2rad(lon2-lon1); 
+      var a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+        ; 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c; // Distance in km
+      return d;
+    }
+   const distance = getDistanceFromLatLonInKm(cordsFrom.lat, cordsFrom.lon , cordsTo.lat, cordsTo.lon)
+   setDistanceData(distance)
+  },[cordsFrom?.lat, cordsTo?.lat])
 
   return (
     <div className="min-h-screen bg-background">
@@ -249,7 +292,7 @@ export default function Dashboard() {
                       </div>
                       <div className="mt-4 flex justify-between items-center">
                         <span className="text-2xl font-bold">
-                          ₹{details.price}
+                          ₹{distanceData * 100}
                         </span>
                         <Button
                           color={details.color}
@@ -265,11 +308,11 @@ export default function Dashboard() {
               </Tabs>
             </CardBody>
           </Card>
-
           {/* Journey Details */}
           <Card>
             <CardHeader>
               <p className="text-md font-semibold">Journey Details</p>
+
             </CardHeader>
             <CardBody>
               <div className="space-y-4">
@@ -278,13 +321,28 @@ export default function Dashboard() {
                   label="From"
                   placeholder="Current Location"
                   variant="bordered"
+                  onChange={(e)=> fetchPlacesName(e.target.value, 'from')}
                 />
+                {placesOutputFrom.length> 0 && placesOutputFrom.map((item)=>{
+                  const {lat, lon } = item
+                  return(
+                    <li onClick={()=>setCordsFrom({lat,lon})}>{item?.formatted}</li>
+                  )
+                })}
+                {/* {JSON.stringify(placesOutput)} */}
                 <Input
                   startContent={<MapPin className="h-4 w-4" />}
                   label="To"
                   placeholder="Office"
                   variant="bordered"
+                  onChange={(e)=> fetchPlacesName(e.target.value, 'to')}
                 />
+                   {placesOutputTo.length> 0 && placesOutputTo.map((item)=>{
+                  const {lat, lon } = item
+                  return(
+                    <li onClick={()=>setCordsTo({lat,lon})}>{item?.formatted}</li>
+                  )
+                })}
                 <Divider className="my-4" />
                 <div className="flex items-center gap-4">
                   <Chip
@@ -293,6 +351,8 @@ export default function Dashboard() {
                   >
                     10 mins
                   </Chip>
+                  {JSON.stringify(cordsFrom) }
+                  {JSON.stringify(cordsTo)}
                   <Chip
                     startContent={<Car className="h-4 w-4" />}
                     variant="flat"

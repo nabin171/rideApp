@@ -6,6 +6,8 @@ import Link from "next/link";
 import * as Yup from "yup";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 const loginSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
@@ -14,6 +16,7 @@ const loginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
 });
 const Login = () => {
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
       password: "",
@@ -30,7 +33,9 @@ const Login = () => {
       `${process.env.NEXT_PUBLIC_API_URL}/login`,
       values
     );
-    if (data) alert("login successfully");
+    if (data) {
+      router.push('/dashboard')
+    }
   };
 
   return (
