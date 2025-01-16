@@ -43,9 +43,9 @@ export default function Dashboard() {
   const mapStyles = { height: "100vh", width: "100%" };
   const defaultCenter = { lat: 27.6855, lng: 85.3448 }; // Broadway Infosys, Kathmandu, Nepal
   const vehicles = {
-    economy: { price: 160, time: "10 min", icon: "🚗", color: "primary" },
-    standard: { price: 200, time: "8 min", icon: "🚙", color: "secondary" },
-    premium: { price: 300, time: "5 min", icon: "🚘", color: "success" },
+    economy: { price: 100, time: "15 min", icon: "🚗", color: "primary" },
+    standard: { price: 160, time: "12 min", icon: "🚙", color: "secondary" },
+    premium: { price: 200, time: "10 min", icon: "🚘", color: "success" },
   };
   const [placesOutputFrom, setPlacesOutputFrom] = useState([]);
   const [placesOutputTo, setPlacesOutputTo] = useState([]);
@@ -199,7 +199,7 @@ export default function Dashboard() {
                         <span className="text-3xl font-bold text-gray-800">
                           ₹
                           {Math.round(
-                            vehicles[selectedVehicle].price * distanceData
+                            details.price * distanceData
                           )}
                         </span>
                       </div>
@@ -266,7 +266,10 @@ export default function Dashboard() {
                     color="warning"
                     className="text-sm font-semibold"
                   >
-                    10 mins
+
+
+                    
+                    {}min
                   </Chip>
 
                   {JSON.stringify(cordsFrom)}
