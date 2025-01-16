@@ -35,10 +35,10 @@ const page = () => {
 
           <div className="pt-10 flex justify-around">
             <div className="flex flex-col w-1/2">
-              <ul class=" flex flex-col gap-4">
+              <ul className=" flex flex-col gap-4">
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class="flex heading  text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className="flex heading  text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       How We Share the Ride
                     </h2>
                   </div>
@@ -54,7 +54,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Annual Driver Background Checks
                     </h2>
                   </div>
@@ -70,7 +70,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Mandatory Driver Safety Education
                     </h2>
                   </div>
@@ -84,7 +84,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Share Your Pronouns
                     </h2>
                   </div>
@@ -111,10 +111,10 @@ const page = () => {
           <div className="pt-10 flex justify-around">
             <img src="/a11.png" width={600} height={400} className=""></img>
             <div className="flex flex-col w-1/2">
-              <ul class=" flex flex-col gap-4">
+              <ul className=" flex flex-col gap-4">
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class="flex heading  text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className="flex heading  text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Smart Ride Check-In
                     </h2>
                   </div>
@@ -129,7 +129,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Share Your Location
                     </h2>
                   </div>
@@ -143,7 +143,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Know Your Driver
                     </h2>
                   </div>
@@ -157,7 +157,7 @@ const page = () => {
 
                 <li className="flex flex-col gap-4">
                   <div className="flex">
-                    <h2 class=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
+                    <h2 className=" heading text-justify text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500">
                       Privacy Protection
                     </h2>
                   </div>

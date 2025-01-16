@@ -27,35 +27,55 @@ const userSchema = new Schema({
 const User = mongoose.model("User", userSchema);
 
 app.post("/register", async (req, res) => {
+  const { password, cpassword, email, username, gender } = req.body;
   //step1:req.body.emailshould not exist in db
-  const user = await User.exists({ email: req.body.email });
+  const userExists = await User.exists({ email: email });
 
-  if (user) return res.status(409).send("Email is taken");
+  if (userExists) {
+    throw "Email is taken";
+  }
+
+  if (password !== cpassword) {
+    throw "Password and confirm password should match";
+  }
 
   //yes it exist -->end and prompt email already in use
 
   //no new email-->
-  req.body.password = await bcrypt.hash(req.body.password, saltRounds);
-  req.body.password = await bcrypt.hash(req.body.cpassword, saltRounds);
+
   // //hash the password
 
+  user = new User({
+    password,
+    email,
+    username,
+    gender,
+  });
+
+  const salt = await bcrypt.genSalt(saltRounds);
+  user.password = await bcrypt.hash(password, salt);
+
   //save the new details with hash password in db
-  User.create(req.body);
+  await user.save();
   res.send("Registered succesfully");
 });
 
 app.post("/login", async (req, res) => {
-  //step1:req.body.emailshould exist in db
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.send("Email does not exist");
-  console.log(req.body.password);
-  console.log(user.password);
-  //db password -->dcrypt and compare with req.body.password
+  const { email, password } = req.body;
 
-  const isMatched = await bcrypt.compare(req.body.password, user.password);
+  //step1:req.body.emailshould exist in db
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    throw "Email does not exist";
+  }
+
+  const isMatched = await bcrypt.compare(password, user.password);
   console.log(isMatched);
   //no -->invalid email
-  if (!isMatched) res.status(401).send("Invalid Password!!");
+  if (!isMatched) {
+    throw "Invalid Password!!";
+  }
 
   const token = jwt.sign(
     { email: req.body.email },

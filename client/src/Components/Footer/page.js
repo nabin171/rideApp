@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button, Input } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
@@ -14,7 +14,7 @@ import { MdLanguage } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
-    const router = useRouter()
+  const router = useRouter();
   return (
     <div className="flex flex-col bg-black">
       <div className=" w-full h-72 flex gap-32 pl-20 pt-10">
@@ -69,7 +69,6 @@ const Footer = () => {
             <p className="cursor-pointer" onClick={() => router.push("/Guide")}>
               New Driver Guide
             </p>
-
 
             <p className="cursor-pointer">Express Rewards</p>
             <p className="cursor-pointer">Insurance</p>
@@ -160,8 +159,8 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <div class="">
-          <hr class="border-t-2 border-gray-700 w-full" />
+        <div className="">
+          <hr className="border-t-2 border-gray-700 w-full" />
         </div>
         <div className="flex gap-2 justify-center pt-2 pb-2">
           <FaCopyright className="text-gray-400 " size={20} />

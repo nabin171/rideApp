@@ -18,9 +18,9 @@
 // const LeftSideBar = () => {
 //   return (
 //     <div className="flex ">
-//       <div class="flex  w-7">
-//         <aside class="w-0.5 text-white p-2">
-//           <main class="flex-grow  bg-gray-100 text-black">
+//       <div className="flex  w-7">
+//         <aside className="w-0.5 text-white p-2">
+//           <main className="flex-grow  bg-gray-100 text-black">
 //             <div className="sidebar   w-[16.5rem]">
 //               <div className="rider-types flex justify-evenly gap-4">
 //                 <div className="flex flex-col">
@@ -40,9 +40,9 @@
 //                 </div>
 //               </div>
 
-//               <div class="relative flex py-4 items-center">
-//                 <div class="flex-grow border-t border-gray-500"></div>
-//                 <div class="flex-grow border-t border-gray-600"></div>
+//               <div className="relative flex py-4 items-center">
+//                 <div className="flex-grow border-t border-gray-500"></div>
+//                 <div className="flex-grow border-t border-gray-600"></div>
 //               </div>
 
 //               <div className="flex flex-col gap-8">
@@ -60,8 +60,6 @@
 //                   <p>Prices</p>
 //                 </div>
 
-
-  
 //                 <div className="flex gap-2">
 //                   <p>
 //                     <IoPerson size={20} />
@@ -87,7 +85,6 @@
 //                   </Button>
 //                 </div>
 
-                
 //               </div>
 //             </div>
 //           </main>
@@ -100,7 +97,6 @@
 // export default LeftSideBar;
 
 //mero code yo mathi ko ho hai
-
 
 "use client";
 import { Card } from "@nextui-org/react";
@@ -182,5 +178,3 @@ export default function LeftSideBar() {
     </div>
   );
 }
-
-
