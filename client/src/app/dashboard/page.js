@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import {
   Button,
@@ -239,7 +238,7 @@ export default function Dashboard() {
                               variant="flat"
                               size="lg"
                             >
-                              {details.time} away
+                              {formatTime(estimatedTime)} away
                             </Badge>
                             <span className="text-3xl font-bold text-gray-800">
                               Rs.{Math.round(details.price * distanceData)}
