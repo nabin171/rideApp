@@ -441,22 +441,101 @@
 // export default page;
 
 
-"use client"
-import { Button } from '@nextui-org/react'
-import React, { useState } from 'react'
+// "use client"
+// import { Button } from '@nextui-org/react'
+// import React, { useState } from 'react'
 
-const page = () => {
-  const [color,setColor]=useState(true)
-  const colorChange=()=>{
-    setColor(!color);
-  }
-  return (
-    <div>
-      <p>{color?"Red":"Blue"}</p>
-      <Button onClick={colorChange}>Color Change</Button>
+// const page = () => {
+//   const [color,setColor]=useState(true)
+//   const colorChange=()=>{
+//     setColor(!color);
+//   }
+//   return (
+//     <div>
+//       <p>{color?"Red":"Blue"}</p>
+//       <Button onClick={colorChange}>Color Change</Button>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default page
+// export default page
+
+
+
+//counterslice.js
+// import { createSlice } from "@reduxjs/toolkit";
+
+// export const counterSlice = createSlice({
+//   name: "counter",
+//   initialState: {
+//     value: 0,
+//   },
+//   reducers: {
+//     increment: (state) => {
+//       state.value += 1;
+//     },
+//     decrement: (state) => {
+//       state.value -= 1;
+//     },
+//   },
+// });
+
+// export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+
+// export default counterSlice.reducer;
+
+//redux PROVIDER.JS
+// "use client";
+// import React from "react";
+// import { Provider } from "react-redux";
+// import store from "./store";
+
+// const ReduxProvider = ({ children }) => {
+//   return <Provider store={store}>{children}</Provider>;
+// };
+
+// export default ReduxProvider;
+
+
+//STORE.JS
+// import { configureStore } from "@reduxjs/toolkit";
+// import counterSlice from "./reducerSlices/counterSlice";
+
+// export default configureStore({
+//   reducer: {
+//     counter: counterSlice,
+//   },
+// });
+
+
+//COUNTER KO PAGE.JS
+
+
+// "use client";
+// import { decrement, increment } from "@/redux/reducerSlices/counterSlice";
+// import { useDispatch, useSelector } from "react-redux";
+
+// const page = () => {
+//   const dispatch = useDispatch();
+//   const { value } = useSelector((state) => state.counter);
+//   return (
+//     <div>
+//       <button
+//         onClick={() => dispatch(increment())}
+//         className="bg-red-200 m-2 p-2 "
+//       >
+//         +
+//       </button>
+//       {value}
+//       <button
+//         onClick={() => dispatch(decrement())}
+//         className="bg-red-200 m-2 p-2 "
+//       >
+//         -
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default page;
