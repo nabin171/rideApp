@@ -10,7 +10,7 @@ const GameCard = ({icon,item}) => {
         dispatch(setUserSelection(item))
     }
   return (
-    <div onClick={handleUserSelection} className='bg-gray-300 p-4 m-2 w-16'>{icon}-{item}</div>
+    <div onClick={handleUserSelection} className='bg-gray-300 p-4 m-2 w-20'>{icon}-{item}</div>
   )
 }
 

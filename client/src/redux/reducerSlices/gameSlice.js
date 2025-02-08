@@ -3,8 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
   name: "game",
   initialState: {
-    userSelection:"",
-    value: 0,
+    userSelection: "",
     gameConfig: {
       userWinningConditions: [
         {
@@ -13,21 +12,20 @@ export const gameSlice = createSlice({
         },
         {
           user: "paper",
-          computer: "scissors",
+          computer: "rock",
         },
         {
           user: "scissors",
-          computer: "rock",
+          computer: "paper",
         },
       ],
     },
+    selectionOptions: ["rock", "paper", "scissor"],
   },
   reducers: {
-    setUserSelection: (state,action) => {
-
-      state.userSelection=action.payload
+    setUserSelection: (state, action) => {
+      state.userSelection = action.payload;
     },
- 
   },
 });
 
