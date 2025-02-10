@@ -29,6 +29,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import axios from "axios";
 import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
+import { useSelector } from "react-redux";
 
 export default function Dashboard() {
   const [selectedVehicle, setSelectedVehicle] = useState("standard");
@@ -44,6 +45,7 @@ export default function Dashboard() {
     standard: { price: 160, time: "12 min", icon: "🚙", color: "secondary" },
     premium: { price: 200, time: "10 min", icon: "🚘", color: "success" },
   };
+  const {userDetails} = useSelector(state=>state.user)
   const [placesOutputFrom, setPlacesOutputFrom] = useState([]);
   const [placesOutputTo, setPlacesOutputTo] = useState([]);
   const [cordsFrom, setCordsFrom] = useState({});
@@ -81,6 +83,16 @@ export default function Dashboard() {
       }
     }
   };
+
+  const handleRideBooking = async() => {
+    await axios.post(   `${process.env.NEXT_PUBLIC_API_URL}/rides`,  {
+      price: vehicles[selectedVehicle]?.price * distanceData,
+      distance: distanceData,
+      passengerId: userDetails.user?._id,
+      cordsFrom,
+      cordsTo,
+    })
+  }
 
   useEffect(() => {
     function deg2rad(deg) {
@@ -125,6 +137,7 @@ export default function Dashboard() {
       <div className="Navbar">
         <CustomNavbar></CustomNavbar>
       </div>
+      
       <div className="Container min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -373,6 +386,7 @@ export default function Dashboard() {
             {/* Action Button */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
+              onClick={handleRideBooking}
                 size="lg"
                 className="w-full py-6 rounded-lg bg-gradient-to-r from-teal-400 to-indigo-500 text-white font-bold text-xl shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
               >

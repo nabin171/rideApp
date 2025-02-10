@@ -8,6 +8,8 @@ import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { loginUser } from "@/redux/reducerSlices/userSlice";
 
 const loginSchema = Yup.object().shape({
   password: Yup.string()
@@ -18,6 +20,7 @@ const loginSchema = Yup.object().shape({
 });
 
 const Login = () => {
+  const dispatch = useDispatch()
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -26,17 +29,18 @@ const Login = () => {
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      loginUser(values);
+      handleLogin(values);
     },
   });
 
-  const loginUser = async (values) => {
+  const handleLogin = async (values) => {
     const { data } = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/login`,
       values
     );
 
     if (data) {
+      dispatch(loginUser(data))
       router.push("/dashboard");
     }
   };
