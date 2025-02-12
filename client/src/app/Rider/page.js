@@ -1,12 +1,27 @@
+'use client'
 import Footer from "@/Components/Footer/page";
 import CustomNavbar from "@/Components/NavBar/page";
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-const page = () => {
+import axios from "axios";
+const page = async() => {
+  // const {data} = await axios.get('http://localhost:8000/rides?status=pending')
+
+
+  
+  // const [rides, setRides] =  useState([])
+  // useEffect(()=>{
+  //   const fetchRides = async() => {
+  //     const {data} = await axios.get('http://localhost:8000/rides?status=pending')
+  //     setRides(data)
+  //   }
+  //   fetchRides()
+  // },[])
   return (
     <div>
       <CustomNavbar></CustomNavbar>
+      {JSON.stringify(data)}
       <div>
         <div className=" pt-20 flex justify-around ">
           <img src="/a9.png" width={600} height={400} className=""></img>
