@@ -1,15 +1,14 @@
-import Footer from '@/Components/Footer/page';
-import CustomNavbar from '@/Components/NavBar/page'
+import Footer from "@/Components/Footer/page";
+import CustomNavbar from "@/Components/NavBar/page";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
-import React from 'react'
+import React from "react";
 import { FaStar } from "react-icons/fa6";
-import { Button } from '@nextui-org/react';
-import Link from 'next/link';
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 const page = () => {
   return (
     <div>
-      <CustomNavbar></CustomNavbar>
       <div className="flex justify-center">
         <h2 className=" pt-4 heading  text-right text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1">
           Introducing Our Best Drivers
@@ -141,25 +140,24 @@ const page = () => {
         </div>
         <div className="flex flex-col gap-8">
           <h2 className="heading  text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 ">
-            Wanna Become A Part of Our Dedicated Team of <br></br>ExpressRides Drivers?
+            Wanna Become A Part of Our Dedicated Team of <br></br>ExpressRides
+            Drivers?
           </h2>
-         
-            <div className="bg-gray-800  rounded-xl w-56 text-center">
-              <Button
-                as={Link}
-                className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1 "
-                href="/register"
-                variant="flat"
-              >
-                Sign Up As a Driver
-              </Button>
-         
+
+          <div className="bg-gray-800  rounded-xl w-56 text-center">
+            <Button
+              as={Link}
+              className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  to-blue-500 m-1 "
+              href="/register"
+              variant="flat"
+            >
+              Sign Up As a Driver
+            </Button>
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
-}
+};
 
-export default page
+export default page;

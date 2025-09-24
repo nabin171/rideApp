@@ -1,71 +1,71 @@
-const User=require('../models/users')
+const User = require("../models/users");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
-//you are not authorized to create account!
-//user is not authorized to login. Invalid password!
 
+// Register
+const registerNewUser = async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
 
-const registerNewUser =async (req, res) => {
-  const { password, cpassword, email, username, gender } = req.body;
-  //step1:req.body.emailshould not exist in db
-  const userExists = await User.exists({ email: email });
+    // Validation
+    if (!username || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
-  if (userExists) {
-    throw "Email is taken";
+    // Check if email exists
+    const userExists = await User.exists({ email });
+    if (userExists) {
+      return res.status(400).json({ message: "Email is taken" });
+    }
+
+    // Hash password
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Save new user
+    const user = new User({ username, email, password: hashedPassword });
+    await user.save();
+
+    return res.status(201).json({ message: "Registered successfully" });
+  } catch (error) {
+    console.error("Register error:", error);
+    res.status(500).json({ message: "Server error" });
   }
-
-  if (password !== cpassword) {
-    throw "Password and confirm password should match";
-  }
-
-  //yes it exist -->end and prompt email already in use
-
-  //no new email-->
-
-  // //hash the password
-
-  user = new User({
-    password,
-    email,
-    username,
-    gender,
-  });
-
-  const salt = await bcrypt.genSalt(saltRounds);
-  user.password = await bcrypt.hash(password, salt);
-
-  //save the new details with hash password in db
-  await user.save();
-  res.send("Registered succesfully");
 };
 
+// Login
+const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-const loginUser=async (req, res) => {
-  const { email, password } = req.body;
+    // Check user
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Email does not exist" });
+    }
 
-  //step1:req.body.emailshould exist in db
-  const user = await User.findOne({ email });
+    // Compare password
+    const isMatched = await bcrypt.compare(password, user.password);
+    if (!isMatched) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
 
-  if (!user) {
-    throw "Email does not exist";
+    // Create JWT
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    return res.json({
+      token,
+      user: { username: user.username, email: user.email },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Server error" });
   }
-
-  const isMatched = await bcrypt.compare(password, user.password);
-  console.log(isMatched);
-  //no -->invalid email
-  if (!isMatched) {
-    throw "Invalid Password!!";
-  }
-
-  const token = jwt.sign(
-    { email: req.body.email },
-    "251acea12138b26bf65b266dc2b3527a43e7d6f009d65337730f63de2d6063fd6e78afe35c85eb901cdf8a0fd6d8c409229b02afeab2fb757cd1df0d9df68f4f8b196112d62a210d4b63c93458f268cf29429194caa3580267ab61bc0c6b5f17d86d23208ee6a858c6b1415b59645e2567b0d74df873e0e300c02b7810413ac0"
-  );
-  res.send({ token, user });
-
-  //not matches:inavlid paassword
-  //matched: generate jwt and say  ok
 };
 
-module.exports={registerNewUser,loginUser}
+module.exports = { registerNewUser, loginUser };

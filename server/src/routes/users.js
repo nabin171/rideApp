@@ -1,7 +1,11 @@
 const { Router } = require("express");
 const { loginUser, registerNewUser } = require("../controllers/users");
-const app = Router();
+const { googleLogin } = require("../controllers/googleAuthController");
 
-app.post("/register", registerNewUser);
-app.post("/login", loginUser);
-module.exports = app;
+const router = Router();
+
+router.post("/register", registerNewUser);
+router.post("/login", loginUser);
+router.post("/googlelogin", googleLogin);
+
+module.exports = router;

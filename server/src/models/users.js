@@ -1,18 +1,26 @@
-
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/rideExpressDb");
-const { Schema } = mongoose;
 
-const userSchema = new Schema({
-  email: String,
-  userName: String,
-  password: String,
-  cpassword: String,
-  gender: {
-    type: String,
-    enum: ["Male", "Female", "Others"],
-    default: "Male",
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
-});
-const User = mongoose.model("User", userSchema);
-module.exports=User
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("User", userSchema);

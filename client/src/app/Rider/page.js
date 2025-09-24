@@ -6,7 +6,6 @@ import Link from "next/link";
 const page = () => {
   return (
     <div>
-      <CustomNavbar></CustomNavbar>
       <div>
         <div className=" pt-20 flex justify-around ">
           <img src="/a9.png" width={600} height={400} className=""></img>
@@ -173,7 +172,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

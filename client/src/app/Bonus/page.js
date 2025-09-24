@@ -3,8 +3,7 @@ import CustomNavbar from "@/Components/NavBar/page";
 import Footer from "@/Components/Footer/page";
 
 import { Gift, Target, Award, Zap } from "lucide-react";
- const BonusPage=()=>{
-
+const BonusPage = () => {
   const bonusCalendar = [
     {
       day: "Monday",
@@ -48,10 +47,9 @@ import { Gift, Target, Award, Zap } from "lucide-react";
         { time: "2PM - 6PM", amount: "+$45" },
       ],
     },
-  ]
+  ];
   return (
     <div className="pb-4">
-      <CustomNavbar></CustomNavbar>
       <div className="max-w-6xl mx-auto mt-6">
         <div className="flex justify-center ">
           <h2 className="heading text-right text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
@@ -149,7 +147,7 @@ import { Gift, Target, Award, Zap } from "lucide-react";
         <div className="bg-gray-900 rounded-lg p-8">
           <div className="flex justify-center">
             <h2 className="heading text-right text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 m-1">
-          Weekly Bonus Calender
+              Weekly Bonus Calender
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 pt-4">
@@ -174,9 +172,7 @@ import { Gift, Target, Award, Zap } from "lucide-react";
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
-}
-  export default BonusPage
-
+};
+export default BonusPage;

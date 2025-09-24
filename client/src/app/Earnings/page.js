@@ -7,7 +7,6 @@ import Footer from "@/Components/Footer/page";
 const Earnings = () => {
   return (
     <div>
-      <CustomNavbar />
       <div className="max-w-6xl mx-auto mt-6">
         {/* Main Heading */}
         <div className="flex justify-center">
@@ -94,7 +93,6 @@ const Earnings = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

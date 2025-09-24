@@ -4,7 +4,7 @@ Overview
 
 Ride App is a real-time web application developed using the MERN stack (MongoDB, Express, React, Node.js). The application enables users to book rides by selecting their destination, choose between car and bike options, and provide feedback and ratings for drivers. The app includes features for user authentication and offers an intuitive interface for both riders and drivers.
 
-![Ride App Screenshot](https://i.imgur.com/nlC8uzV.jpeg)
+![Ride App Screenshot](https://ibb.co/YB24RQqK)
 
 > _The screenshot displays the main ride booking interface with car and bike options, a destination input, weather information, and a real-time ride status card._
 

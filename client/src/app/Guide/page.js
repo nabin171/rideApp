@@ -7,7 +7,6 @@ import Footer from "@/Components/Footer/page";
 const NewDriverGuide = () => {
   return (
     <div>
-      <CustomNavbar />
       <div className="max-w-6xl mx-auto mt-6">
         {/* Main Heading */}
         <div className="flex justify-center">
@@ -100,7 +99,6 @@ const NewDriverGuide = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

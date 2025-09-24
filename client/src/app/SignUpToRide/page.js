@@ -58,9 +58,10 @@ const SignUpToRide = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="min-h-screen w-full flex flex-col overflow-hidden">
-      <CustomNavbar />
-
+    <form
+      onSubmit={formik.handleSubmit}
+      className="min-h-screen w-full flex flex-col overflow-hidden"
+    >
       <div className="w-full flex flex-grow items-center justify-center bg-gray-100 pt-10 pb-10">
         <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md overflow-hidden">
           <h2 className="text-3xl font-semibold text-center bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text mb-6">
@@ -139,7 +140,9 @@ const SignUpToRide = () => {
               onChange={formik.handleChange}
               value={formik.values.confirmPassword}
             />
-            <div className="text-red-500 text-sm">{formik.errors.confirmPassword}</div>
+            <div className="text-red-500 text-sm">
+              {formik.errors.confirmPassword}
+            </div>
           </div>
 
           {/* Vehicle Type */}
@@ -151,10 +154,16 @@ const SignUpToRide = () => {
               onChange={(value) => formik.setFieldValue("vehicleType", value)}
               placeholder="Select vehicle type"
             >
-              <SelectItem key="car" value="Car">Car</SelectItem>
-              <SelectItem key="bike" value="Bike">Bike</SelectItem>
+              <SelectItem key="car" value="Car">
+                Car
+              </SelectItem>
+              <SelectItem key="bike" value="Bike">
+                Bike
+              </SelectItem>
             </Select>
-            <div className="text-red-500 text-sm">{formik.errors.vehicleType}</div>
+            <div className="text-red-500 text-sm">
+              {formik.errors.vehicleType}
+            </div>
           </div>
 
           {/* Submit Button */}
@@ -176,8 +185,6 @@ const SignUpToRide = () => {
           </p>
         </div>
       </div>
-
-      <Footer />
     </form>
   );
 };

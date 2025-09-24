@@ -7,7 +7,6 @@ import Footer from "@/Components/Footer/page";
 const Cities = () => {
   return (
     <div>
-      <CustomNavbar />
       <div className="max-w-6xl mx-auto mt-6">
         {/* Main Heading */}
         <div className="flex justify-center">
@@ -57,7 +56,6 @@ const Cities = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
